@@ -1,0 +1,20 @@
+.Body{
+    height: 100vh; /*over div*/
+}
+
+.Nav{
+    height: 10%;
+}
+.Content{
+    height: 40%;
+}
+.Cardlist{
+    height: 30%;
+}
+.footer{
+    height: 150px;
+}
+.Card-items{
+    height: 239px;
+    width: 200px;
+}
