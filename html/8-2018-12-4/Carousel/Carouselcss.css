@@ -1,0 +1,36 @@
+.Nav{
+    height: 70px;
+}
+.Carousel{
+    height: 500px;
+}
+.headingls{
+    height: 400px;
+}
+.footer{
+    height: 100px;
+}
+.image1{
+    background-image: url("./picture1.jpeg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: inherit;
+    height: 500px;
+}
+.image2{
+    background-image: url("./pexels-photo-969679.jpeg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: inherit;
+    height: 500px;
+}
+.image3{
+    background-image: url("./pexels-photo-631037.jpeg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: inherit;
+    height: 500px;
+}
