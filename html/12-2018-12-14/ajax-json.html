@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+     <body>
+        <button id="js-button">Click Me Pls !</button>
+        <div id="js-div-data"></div>
+        
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script>
+            $("#js-button").click(function(){
+                $.get("./data.json", function(response){
+                    var table = '<table id="js-table" class="table"></table>';
+                    $('#js-div-data').append(table);
+
+                    var thead = '<thead id="js-thead"></thead>';
+                    $(thead).appendTo('#js-table');
+                    var tr = '<tr id="js-tr-head"></tr>';
+                    $(tr).appendTo('#js-thead');
+                    var th ='<th>#</th><th>Name</th><th>Email</th>';
+                    $(th).appendTo('#js-tr-head');
+
+                    var tbody = ' <tbody></tbody>';
+                    $('#js-thead').after(tbody);
+
+                    for (i = 0; i < response.users.length; i++) 
+                    {
+                        var trBody = '<tr id="trBody-' + b.users[i].id + '"></tr>';
+                        $(trBody).appendTo('tbody');
+                         var thBody = ' <th>' + (i + 1) + '</th>';
+                        var tdBody = '<td>' + b.users[i].name + '</td><td>' + b.users[i].email + '</td> ';
+                        $('#trBody-' + b.users[i].id).append(thBody, tdBody);
+                    }
+                });
+            });
+        </script>         
+     </body>
+</html>

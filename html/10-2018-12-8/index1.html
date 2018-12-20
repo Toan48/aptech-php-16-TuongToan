@@ -8,7 +8,23 @@
         <button>click to turn on/off</button>
 
         <img src="./pic_bulboff.gif" id="img1">       
-        <script src="./index1.js">
+            
+        <script>
+            $(document).ready(function()
+            {
+                $("button").click(function () 
+                {  
+                  var n = document.getElementById("img1");
+                  if(n.src == "./pic_bulboff.gif")
+                  {
+                      $("#img1").attr("src", "./pic_bulbon.gif");
+                  }
+                  else
+                  {
+                    $("#img1").attr("src", "./pic_bulboff.gif");
+                  }
+                });
+            });
             
         </script>
     </body>
