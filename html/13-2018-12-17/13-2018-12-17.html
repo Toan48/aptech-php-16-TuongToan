@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+       <table class="table table-light">
+           <thead class="thead-light">
+               <tr>
+                   <th>id</th>
+                   <th>name</th>
+                   <th>email</th>
+                   <th>password</th>
+                   <th>created_at</th>
+                   <th>updated_at</th>
+               </tr>
+            </thead>
+       </table>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $.get("https://namcoi.com/projects/laravel-crud/api/users", function(data, status){
+                    var employee = " ";
+                    $.each(data, function(key, value){
+                        employee += '<tr>';
+                        employee += '<td>'+ value.id +'</td>';
+                        employee += '<td>'+ value.name +'</td>';
+                        employee += '<td>'+ value.email +'</td>';
+                        employee += '<td>'+ value.password +'</td>';
+                        employee += '<td>'+ value.created_at +'</td>';
+                        employee += '<td>'+ value.updated_at +'</td>';
+                        employee += '</tr>';
+                    });
+                    $("table").append(employee);
+                });
+            });
+        </script>
+    </body>
+</html>
