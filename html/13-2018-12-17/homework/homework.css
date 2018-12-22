@@ -1,0 +1,20 @@
+.Header-2
+{
+    background-image: url(./images/C_Users_Chi_AppData_Local_Packages_Microsoft_SkypeApp_kzf8qxf38zg5c_LocalState_976941b9-adea-4bdc-ba04-3ce696ad0c59.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: inherit;
+    height: 400px;
+}
+.div1{
+    height: 40px;
+    width: inherit;
+    background-color: brown;
+}
+.div2
+{
+    height: 20px;
+    width: inherit;
+    background-color: green;
+}
