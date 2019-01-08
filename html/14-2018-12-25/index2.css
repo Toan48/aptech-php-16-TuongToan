@@ -8,7 +8,7 @@
 }
 .Nav
 {
-    height: 200px;
+    
 }
 
 .img2{
@@ -28,11 +28,11 @@
     height: 100px;
 }
 .People{
-    height: 300px;
+   
 }
 .Footer{
     height: 200px;
-    background-image: url(./pexels-photo-1001682.jpe./);
+    background-image: url(./sea-water-ocean-horizon.jpg);
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center;
