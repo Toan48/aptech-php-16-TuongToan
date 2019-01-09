@@ -1,3 +1,16 @@
+
+
+<table>
+    <tr>
+        <th>type</th>
+        <th>price</th>
+        <th>size</th>
+        <th>ram</th>
+        <th>made by</th>
+        <th>made in</th>
+    </tr>
+    <tbody>
+
 <?php
     $data = [
         [
@@ -26,17 +39,20 @@
         ],
     ];
 
-    foreach($data as $key => $value)
-    {  
-        echo $key;
-        echo " ";
-        foreach($value as $key1 => $value1 )
-        {
-            echo " ";
-            var_dump($value1);
-        }
-        echo "<br>";
+    for($i = 0; $i < count($data); $i++)
+    {
+        echo "<tr>";
+        echo "<td>".$data[$i]['type']."</td>";
+        echo "<td>".$data[$i]['property']['price']."</td>";
+        echo "<td>".$data[$i]['property']['size']."</td>";
+        echo "<td>".$data[$i]['property']['ram']."</td>";
+        echo "<td>".$data[$i]['property']['made']['by']."</td>";
+        echo "<td>".$data[$i]['property']['made']['in']."</td>";
+        echo "</tr>";
     }
+?>
+    </tbody>    
+</table>
     
     
 
