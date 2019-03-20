@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="{{asset('css/header.css')}}">
     <link rel="stylesheet" href="{{asset('css/slide.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick.css')">
-    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick-theme.css')">
+    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick-theme.css')}}">
 
 
 
@@ -25,7 +25,7 @@
     <!-- header -->
     <div class="header">
         <div class="logo">
-            <img src="./assets/img/logo.png" alt="">
+            <img src="{{asset('img/logo.png')}}" alt="">
         </div>
         <input type="checkbox" id="chk">
         <label for="chk" class="show-menu-btn">
@@ -136,9 +136,9 @@
                 <div class="row">
                     <div class="w-100 slick">
                         <a href="#" class="slide-2">
-                            <img src="./assets/img/slide-img1.jpg" alt=""></a>
+                            <img src="{{asset('img/slide-img1.jpg')}}" alt=""></a>
                         <a href="#" class="slide-3">
-                            <img src="./assets/img/slide-img2.jpg" alt="">
+                            <img src="{{asset('img/slide-img2.jpg')}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -151,12 +151,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="image-effect">
-                        <a href="#"><img src="./assets/img/speakers.png" alt="" style="width:100%;"></a>
+                        <a href="#"><img src="{{asset('img/speakers.png')}}" alt="" style="width:100%;"></a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="image-effect">
-                        <a href="#"><img src="./assets/img/schedule.png" alt="" style="width:100%;"></a>
+                        <a href="#"><img src="{{asset('img/schedule.png')}}" alt="" style="width:100%;"></a>
                     </div>
                 </div>
             </div>
@@ -173,7 +173,7 @@
                     <div class="w-100 display-slick">
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p1.jpg" alt=""></a>
+                                <img src="{{asset('img/p1.jpg')}}" alt=""></a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
                                     <i class="fas fa-search"></i>
@@ -220,7 +220,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p12.jpg" alt="">
+                                <img src="{{asset('img/p12.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -262,7 +262,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p13.jpg" alt="">
+                                <img src="{{asset('img/p13.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -306,7 +306,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p15.jpg" alt="">
+                                <img src="{{asset('img/p15.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -352,7 +352,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p16.jpg" alt="">
+                                <img src="{{asset('img/p16.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -396,7 +396,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p2.jpg" alt="">
+                                <img src="{{asset('img/p2.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -453,7 +453,7 @@
                         <div class="section">
                             <div class="offer-slider parallax parallax-2">
                                 <div class="avatar">
-                                    <img src="./assets/img/member1.png" alt="">
+                                    <img src="{{asset('img/member1.png')}}" alt="">
 
                                 </div>
                                 <div class="testimonials">Our support and response has been amazing, helping me with
@@ -464,7 +464,7 @@
                             </div>
                             <div class="offer-slider parallax parallax-2">
                                 <div class="avatar">
-                                    <img src="./assets/img/member2.png" alt="">
+                                    <img src="{{asset('img/member2.png')}}" alt="">
 
                                 </div>
                                 <div class="testimonials">Our support and response has been amazing, helping me with
@@ -475,7 +475,7 @@
                             </div>
                             <div class="offer-slider parallax parallax-2">
                                 <div class="avatar">
-                                    <img src="./assets/img/member3.png" alt="">
+                                    <img src="{{asset('img/member3.png')}}" alt="">
 
                                 </div>
                                 <div class="testimonials">Our support and response has been amazing, helping me with
@@ -501,7 +501,7 @@
                     <div class="w-100 display-slick">
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p3.jpg" alt=""></a>
+                                <img src="{{asset('img/p3.jpg')}}" alt=""></a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
                                     <i class="fas fa-search"></i>
@@ -548,7 +548,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p6.jpg" alt="">
+                                <img src="{{asset('img/p6.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -590,7 +590,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p8.jpg" alt="">
+                                <img src="{{asset('img/p8.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -634,7 +634,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p16.jpg" alt="">
+                                <img src="{{asset('img/p16.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -680,7 +680,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p17.jpg" alt="">
+                                <img src="{{asset('img/p17.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -724,7 +724,7 @@
                         </div>
                         <div class="display-image">
                             <a href="#" class="product-image">
-                                <img src="./assets/img/p18.jpg" alt="">
+                                <img src="{{asset('img/p18.jpg')}}" alt="">
                             </a>
                             <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
                                 <a href="#">
@@ -780,7 +780,7 @@
           <div class="row">
             <div class="col-md-4">
               <div class="blog_inner">
-                <div class="blog-img"> <a href="#"> <img src="./assets/img/blog-img1.jpg" alt="blog image"> </a> </div>
+                <div class="blog-img"> <a href="#"> <img src="{{asset('img/blog-img1.jpg')}}" alt="blog image"> </a> </div>
     
                 <div class="blog-info">
                   <div class="post-date"> <span class="entry-date">14 Jan, 2019</span> </div>
@@ -796,7 +796,7 @@
             </div>
             <div class="col-md-4">
               <div class="blog_inner">
-                <div class="blog-img"> <a href="#"> <img src="./assets/img/blog-img2.jpg" alt="blog image"> </a> </div>
+                <div class="blog-img"> <a href="#"> <img src="{{asset('img/blog-img2.jpg')}}" alt="blog image"> </a> </div>
     
                 <div class="blog-info">
                   <div class="post-date"> <span class="entry-date">14 Jan, 2019</span> </div>
@@ -812,7 +812,7 @@
             </div>
             <div class="col-md-4">
               <div class="blog_inner">
-                <div class="blog-img"> <a href="#"> <img src="./assets/img/blog-img3.jpg" alt="blog image"> </a> </div>
+                <div class="blog-img"> <a href="#"> <img src="{{asset('img/blog-img3.jpg')}}" alt="blog image"> </a> </div>
     
                 <div class="blog-info">
                   <div class="post-date"> <span class="entry-date">14 Jan, 2019</span> </div>
@@ -837,62 +837,62 @@
         <div class="brand-slider">
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand1.png" alt="">
+              <img src="{{asset('img/brand1.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand2.png" alt="">
+              <img src="{{asset('img/brand2.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand3.png" alt="">
+              <img src="{{asset('img/brand3.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand4.png" alt="">
+              <img src="{{asset('img/brand4.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand5.png" alt="">
+              <img src="{{asset('img/brand5.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
             <a href="#">
-              <img src="./assets/img/brand6.png" alt="">
+              <img src="{{asset('img/brand6.png')}}" alt="">
             </a>
           </div>
           <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand1.png" alt="">
+                  <img src="{{asset('img/brand1.png')}}" alt="">
                 </a>
               </div>
               <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand2.png" alt="">
+                  <img src="{{asset('img/brand2.png')}}" alt="">
                 </a>
               </div>
               <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand3.png" alt="">
+                  <img src="{{asset('img/brand3.png')}}" alt="">
                 </a>
               </div>
               <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand4.png" alt="">
+                  <img src="{{asset('img/brand4.png')}}" alt="">
                 </a>
               </div>
               <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand5.png" alt="">
+                  <img src="{{asset('img/brand5.png')}}" alt="">
                 </a>
               </div>
               <div class="logo-item">
                 <a href="#">
-                  <img src="./assets/img/brand6.png" alt="">
+                  <img src="{{asset('img/brand6.png')}}" alt="">
                 </a>
               </div>
         </div>
@@ -904,7 +904,7 @@
             <div class="row">
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="./assets/img/world-icon.png" alt="">
+                  <img src="{{asset('img/world-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>World's #1</h6>
@@ -913,7 +913,7 @@
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="./assets/img/car-sold-icon.png" alt="">
+                  <img src="{{asset('img/car-sold-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>Car Sold</h6>
@@ -922,7 +922,7 @@
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="./assets/img/tag-icon.png" alt="">
+                  <img src="{{asset('img/tag-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>Offers</h6>
@@ -931,7 +931,7 @@
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="./assets/img/compare-icon.png" alt="">
+                  <img src="{{asset('img/compare-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>Compare</h6>
@@ -1029,10 +1029,10 @@
               <div class="col-sm-4 col-xs-12 coppyright">© 2019 ThemesGround. All Rights Reserved. </div>
               <div class="col-12 col-md-4">
                 <div class="payment-accept">
-                  <img src="./assets/img/payment-1.png" alt="">
-                  <img src="./assets/img/payment-2.png" alt="">
-                  <img src="./assets/img/payment-3.png" alt="">
-                  <img src="./assets/img/payment-4.png" alt=""> </div>
+                  <img src="{{asset('img/payment-1.png')}}" alt="">
+                  <img src="{{asset('img/payment-2.png')}}" alt="">
+                  <img src="{{asset('img/payment-3.png')}}" alt="">
+                  <img src="{{asset('img/payment-4.png')}}" alt=""> </div>
               </div>
             </div>
           </div>
@@ -1046,7 +1046,7 @@
 
 
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="./assets/js/slick-1.8.1/slick/slick.js"></script>
+    <script src="{{asset('js/slick-1.8.1/slick/slick.js')}}"></script>
 
 
     <script>

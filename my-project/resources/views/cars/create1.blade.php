@@ -20,36 +20,43 @@
                 <div class="col-6 form-group">
                     <label for="name">name</label>
                     <input type="text" name="name" class="form-control">
+                    <p class="text-danger">{{$errors->first('name')}}</p>
                 </div>
                 <div class="col-6 form-group">
                     <label for="name">year</label>
                     <input type="text" name="year" class="form-control">
+                    <p class="text-danger">{{$errors->first('year')}}</p>
                 </div>
             </div>
             <div class="col-12 d-flex">
                 <div class="col-6 form-group">
                     <label for="name">body style</label>
                     <input type="text" name="body_style" class="form-control">
+                    <p class="text-danger">{{$errors->first('body_style')}}</p>
                 </div>
                 <div class="col-6 form-group">
                     <label for="name">engine</label>
                     <input type="text" name="engine" class="form-control">
+                    <p class="text-danger">{{$errors->first('engine')}}</p>
                 </div>
             </div>
             <div class="col-12 d-flex">
                 <div class="col-6 form-group">
                     <label for="name">price</label>
                     <input type="text" name="price" class="form-control">
+                    <p class="text-danger">{{$errors->first('price')}}</p>
                 </div>
                 <div class="col-6 form-group">
                     <label for="name">transmission</label>
                     <input type="text" name="transmission" class="form-control">
+                    <p class="text-danger">{{$errors->first('transmission')}}</p>
                 </div>
             </div>
             <div class="col-12 d-flex">
                 <div class="col-6 form-group">
                     <label for="name">color</label>
                     <input type="text" name="color" class="form-control">
+                    <p class="text-danger">{{$errors->first('color')}}</p>
                 </div>
                 <div class="col-6 form-group">
                     <label for="name">categories</label>
@@ -63,20 +70,24 @@
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
+                        <p class="text-danger">{{$errors->first('categories')}}</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 form-group">
                 <label for="">fuel style</label>
                 <input type="text" class="form-control" name="fuel_style">
+                <p class="text-danger">{{$errors->first('fuel_style')}}</p>
             </div>
             <div class="col-12 form-group">
                 <label for="">image</label>
                 <input type="file" name="img" class="form-control">
+                <p class="text-danger">{{$errors->first('image')}}</p>
             </div>
             <div class="col-12 form-group">
                 <label for="">description</label>
                 <textarea id="summernote" name="description"></textarea>
+                <p class="text-danger">{{$errors->first('description')}}</p>
             </div>
             <button type="submit" class="btn btn-warning">create</button>
         </form>

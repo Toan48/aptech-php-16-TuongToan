@@ -209,10 +209,10 @@
                           
                         
                         </div>
-            
+                        
                       </div>
                       <div class="toolbar">
-            
+                        {!! $cars->links() !!}
                         <div class="pager">
                           <div id="limiter">
                             <label>View: </label>

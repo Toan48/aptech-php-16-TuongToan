@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\car;
 use App\category;
+use App\Http\Requests\createProductRequest;
 
 class carsController extends Controller
 {
@@ -16,7 +17,7 @@ class carsController extends Controller
     public function index()
     {
         //
-        $cars = car::all();
+        $cars = car::paginate(12);
         return view('cars.index', ['cars' => $cars]);
     }
 
@@ -38,7 +39,7 @@ class carsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createProductRequest $request)
     {
         //
         
