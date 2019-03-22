@@ -30,3 +30,6 @@ Route::get('admin/createCars', 'adminController@create')->name('admin.createCars
 //categories
 Route::get('categories/create', 'categoriesController@create')->name('category.create');
 Route::post('categories/store', 'categoriesController@store')->name('category.store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

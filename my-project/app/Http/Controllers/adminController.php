@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\car;
 
 class adminController extends Controller
 {
@@ -14,7 +15,8 @@ class adminController extends Controller
     public function index()
     {
         //
-        return view('admin.list-product');
+        $cars = car::paginate(20);
+        return view('admin.list-product', ['cars'=> $cars]);
     }
 
     /**
@@ -26,7 +28,7 @@ class adminController extends Controller
     {
         //
        
-        return view('admin.add-product');
+        return view('admin.createProduct');
     }
 
     /**
