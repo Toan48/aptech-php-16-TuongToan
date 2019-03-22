@@ -14,19 +14,19 @@
    <!-- Font Awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
-		<link rel="stylesheet" href="{{asset('js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')}}">
-		<link rel="stylesheet" href="{{asset('js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{asset('css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/header.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
 </head>
 
 <body>
     <!-- header -->
     <div class="header">
             <div class="logo">
-                <img src="{{asset('img/logo.png')}}" alt="">
+                <img src="{{asset('assets/img/logo.png')}}" alt="">
             </div>
             <input type="checkbox" id="chk">
             <label for="chk" class="show-menu-btn">
@@ -101,10 +101,10 @@
             </div>
             <div class="col-12 col-md-7 product-detail">
                 <div class="brand">
-                    <strong></strong>
+                    <strong>XPERIA</strong>
                 </div>
                 <div class="name">
-                    <h1>{{$car->name}}</h1>
+                    <h1>Gorgeous Mercedes-Benz E-Class All-Terrain Luxury</h1>
                 </div>
                 <div class="ratings">
                     <div class="rating-box">
@@ -121,7 +121,7 @@
                             <span>In Stock</span>
                         </p>
                         <p class="special-price">
-                        <span id="product-price-48" class="price"> ${{$car->price}}</span>
+                            <span id="product-price-48" class="price"> $309.99 </span>
                         </p>
                     </div>
                 </div>
@@ -501,7 +501,7 @@
             <div class="row">
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="{{asset('img/world-icon.png')}}" alt="">
+                  <img src="{{asset('assets/img/world-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>World's #1</h6>
@@ -510,8 +510,8 @@
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="{{asset('img/car-sold-icon.png')}}" alt="">
-                </div>
+                  <img src="{{asset('assets/img/car-sold-icon.png')}}" alt="">
+              ')}}  </div>
                 <div class="content">
                   <h6>Car Sold</h6>
                   <p>Every 4 minute</p>
@@ -519,16 +519,16 @@
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="{{asset('img/tag-icon.png')}}" alt="">
+                  <img src="{{asset('assets/img/tag-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>Offers</h6>
-                  <p>Stay updated pay less</p>
+                  <p>Stay updated pay less</p>"
                 </div>
               </div>
               <div class="col-md-3 d-flex feature-box">
                 <div class="icon-truck">
-                  <img src="{{asset('img/compare-icon.png')}}" alt="">
+                  <img src="{{asset('assets/img/compare-icon.png')}}" alt="">
                 </div>
                 <div class="content">
                   <h6>Compare</h6>
@@ -626,10 +626,10 @@
               <div class="col-sm-4 col-xs-12 coppyright">© 2019 ThemesGround. All Rights Reserved. </div>
               <div class="col-12 col-md-4">
                 <div class="payment-accept">
-                  <img src="{{asset('img/payment-1.png')}}" alt="">
-                  <img src="{{asset('img/payment-2.png')}}" alt="">
-                  <img src="{{asset('img/payment-3.png')}}" alt="">
-                  <img src="{{asset('img/payment-4.png')}}" alt=""> </div>
+                  <img src="{{asset('assets/img/payment-1.png')}}" alt="">
+                  <img src="{{asset('assets/img/payment-2.png')}}" alt="">
+                  <img src="{{asset('assets/img/payment-3.png')}}" alt="">
+                  <img src="{{asset('assets/img/payment-4.png')}}" alt=""> </div>
               </div>
             </div>
           </div>
@@ -643,8 +643,8 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-		<script src="{{asset('js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>
-		<script src="{{asset('js/custom.js')}}"></script>
+		<script src="{{asset('assets/js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')}}"></script>')}}
+		<script src="{{asset('assets/js/custom.js')}}"></script>
 </body>
 
 </html>

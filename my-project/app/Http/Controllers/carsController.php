@@ -29,8 +29,8 @@ class carsController extends Controller
     public function create()
     {
         //
-        $categories = category::get();
-        return view('cars.create1', ['categories' => $categories]);
+        $categories = category::all();
+        return view('admin.createProduct', ['categories' => $categories]);
     }
 
     /**
@@ -39,7 +39,7 @@ class carsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createProductRequest $request)
+    public function store(Request $request)
     {
         //
         
@@ -54,9 +54,9 @@ class carsController extends Controller
         $car->fuel_style = $request->fuel_style; 
         $car->category_id = $request->categories;
         //up image to database
-        $filename = $request->file('img')->getClientOriginalName();
+        $filename = $request->file('image')->getClientOriginalName();
         $path = public_path('img');
-        $request->file('img')->move($path, $filename);
+        $request->file('image')->move($path, $filename);
         $car->image = $filename;
         $car->description = $request->description;
         $car->save();

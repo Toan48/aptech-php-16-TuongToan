@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/GT.css')}}">
-    <link rel="stylesheet" href="{{asset('css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('assets/css/GT.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/header.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('js/slick-1.8.1/slick/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/js/slick-1.8.1/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/js/slick-1.8.1/slick/slick-theme.css')}}">
 </head>
 <body>
    <!-- header -->
    <div class="header">
       <div class="logo">
-          <img src="{{asset('img/logo.png')}}" alt="">
+          <img src="{{asset('assets/img/logo.png')}}" alt="">
       </div>
       <input type="checkbox" id="chk">
       <label for="chk" class="show-menu-btn">
@@ -128,21 +128,21 @@
                       <div class="custum-slider">
                         <div class="inner">
                           <div class="item">
-                            <img src="{{asset('img/slide1.jpg')}}" alt="">
+                            <img src="{{asset('assets/img/slide1.jpg')}}" alt="">
                             <div class="caption">
                               <h3><a title=" Sample Product" href="product-detail.html">50% OFF</a></h3>
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                           </div>
                             <div class="item">
-                              <img src="{{asset('img/slide2.jpg')}}" alt="">
+                              <img src="{{asset('assets/img/slide2.jpg')}}" alt="">
                               <div class="caption">
                                 <h3><a title=" Sample Product" href="product-detail.html">50% OFF</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                               </div>
                             </div>
                               <div class="item">
-                                <img src="{{asset('img/slide3.jpg')}}" alt="">
+                                <img src="{{asset('assets/img/slide3.jpg')}}" alt="">
                                 <div class="caption">
                                   <h3><a title=" Sample Product" href="product-detail.html">50% OFF</a></h3>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -157,7 +157,6 @@
                     <div class="col-md-9 col-12 mt-5">
                       <div class="category-products">
                         <div class="products-grid">
-                          <!--items-->
                           @foreach($cars as $car)
                           <div class="item col-lg-4 col-md-3 col-sm-4 col-xs-6">
                             <div class="display-image">
@@ -165,7 +164,7 @@
                                 <img src="{{asset('img/'.$car->image)}}" alt="">
                               </a>
                               <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="{{route('cars.show', $car->id)}}">
+                                <a href="#">
                                   <i class="fas fa-search"></i>
                                 </a>
                                 <a href="#">
@@ -206,13 +205,12 @@
                           </div>
                           @endforeach
                           
-                          
                         
                         </div>
-                        
+            
                       </div>
                       <div class="toolbar">
-                        {!! $cars->links() !!}
+            
                         <div class="pager">
                           <div id="limiter">
                             <label>View: </label>
@@ -253,7 +251,7 @@
           <div class="row">
             <div class="col-md-3 d-flex feature-box">
               <div class="icon-truck">
-                <img src="{{asset('img/world-icon.png')}}" alt="">
+                <img src="{{asset('assets/img/world-icon.png')}}" alt="">
               </div>
               <div class="content">
                 <h6>World's #1</h6>
@@ -262,7 +260,7 @@
             </div>
             <div class="col-md-3 d-flex feature-box">
               <div class="icon-truck">
-                <img src="{{asset('img/car-sold-icon.png')}}" alt="">
+                <img src="{{asset('assets/img/car-sold-icon.png')}}" alt="">
               </div>
               <div class="content">
                 <h6>Car Sold</h6>
@@ -271,7 +269,7 @@
             </div>
             <div class="col-md-3 d-flex feature-box">
               <div class="icon-truck">
-                <img src="{{asset('img/tag-icon.png')}}" alt="">
+                <img src="{{asset('assets/img/tag-icon.png')}}" alt="">
               </div>
               <div class="content">
                 <h6>Offers</h6>
@@ -280,7 +278,7 @@
             </div>
             <div class="col-md-3 d-flex feature-box">
               <div class="icon-truck">
-                <img src="{{asset('img/compare-icon.png')}}" alt="">
+                <img src="{{asset('assets/img/compare-icon.png')}}" alt="">
               </div>
               <div class="content">
                 <h6>Compare</h6>
@@ -378,17 +376,17 @@
             <div class="col-sm-4 col-xs-12 coppyright">© 2019 ThemesGround. All Rights Reserved. </div>
             <div class="col-12 col-md-4">
               <div class="payment-accept">
-                <img src="{{asset('img/payment-1.png')}}" alt="">
-                <img src="{{asset('img/payment-2.png')}}" alt="">
-                <img src="{{asset('img/payment-3.png')}}" alt="">
-                <img src="{{asset('img/payment-4.png')}}" alt=""> </div>
+                <img src="{{asset('assets/img/payment-1.png')}}" alt="">
+                <img src="{{asset('assets/img/payment-2.png')}}" alt="">
+                <img src="{{asset('assets/img/payment-3.png')}}" alt="">
+                <img src="{{asset('assets/img/payment-4.png')}}" alt=""> </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
                 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-                <script src="{{asset('js/slick-1.8.1/slick/slick.js')}}"></script>
+                <script src="{{asset('assets/js/slick-1.8.1/slick/slick.js')}}"></script>
                 <script>
                         $(document).ready(function () {
                            $('.inner').slick({
