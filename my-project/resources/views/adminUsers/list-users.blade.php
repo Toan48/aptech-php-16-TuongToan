@@ -373,15 +373,15 @@
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
-                                <li><a href="{{route('admin.index')}}">Quản lý</a></li>
-                                <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
+                                <li><a href="add-product.html">Thêm mới</a></li>
+                                <li><a href="list-product.html">Quản lý</a></li>
+                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
-                                <li><a href="">Quản lý</a></li>
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -463,40 +463,29 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">id</th>
-                                                <th>hình ảnh</th>
-                                                <th class="text-center">Tên xe</th>
-                                                <th class="text-center">Hãng</th>
-                                                <th class="text-center">năm sản xuất</th>
-                                                <th class="text-center">Giá</th>
-                                                <th class="text-center">Màu sắc</th>
-                                                <th class="text-center">loại xe</th>
-                                                <th class="text-center">động cơ</th>
-                                                <th class="text-center">hộp số</th>
-                                                <th class="text-center">nhiên liệu</th>
-                                                <th class="text-center">Chi tiết sản phẩm</th>
-                                                <th class="text-center">action</th>
+                                                <th>name</th>
+                                                <th>username</th>
+                                                <th>password</th>
+                                                <th>email</th>
+                                                <th>created_at</th>
+                                                <th>updated_at</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($cars as $car)            
+                                            @foreach($users as $user)            
                                             <tr>
-                                                <td>{{$car->id}}</td>
-                                                <td><img src="{{asset('img/'.$car->image)}}" alt="" style="heigh:100px; width:100px;"></td>
-                                                <td>{{$car->name}}</td>
-                                                <td>{{$car->category_id}}</td>
-                                                <td>{{$car->year}}</td>
-                                                <td>{{$car->price}}</td>
-                                                <td>{{$car->color}}</td>
-                                                <td>{{$car->body_style}}</td>
-                                                <td>{{$car->engine}}</td>
-                                                <td>{{$car->transmission}}</td>
-                                                <td>{{$car->fuel_style}}</td>
-                                                <td>{!!$car->description!!}</td>
+                                                <td>{{$user->id}}</td>
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->username}}</td>
+                                                <td>{{$user->password}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->created_at}}</td>
+                                                <td>{{$user->updated_at}}</td>
                                                 <td class="d-flex">
-                                                    <form action="{{route('admin.show', $car->id)}}" class="mr-2" method="GET">
+                                                    <form action="{{route('auth.show', $user->id)}}" class="mr-2" method="GET">
                                                         <button class="btn btn-warning" type="submit">show</button>
                                                     </form>
-                                                    <form action="{{route('admin.destroy', $car->id)}}" method="post">
+                                                    <form action="{{route('auth.destroy', $user->id)}}" method="post">
                                                         <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
                                                         <button class="btn btn-danger" type="submit">delete</button>
                                                     </form>

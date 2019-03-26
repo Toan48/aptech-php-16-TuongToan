@@ -275,7 +275,7 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
-                                <li><a href="#">Quản lý</a></li>
+                                <li><a href="">Quản lý</a></li>
                             </ul>
                         </li>
                     </ul>

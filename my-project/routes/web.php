@@ -32,6 +32,8 @@ Route::get('admin/edit/{id}', 'adminController@edit')->name('admin.edit')->middl
 Route::post('admin/cars/store', 'adminController@store')->name('admin.store');
 Route::post('admin/update/{id}', 'adminController@update')->name('admin.update');
 Route::delete('admin/delete/{id}', 'adminController@destroy')->name('admin.destroy');
+
+
 //categories
 Route::get('categories/create', 'categoriesController@create')->name('category.create');
 Route::post('categories/store', 'categoriesController@store')->name('category.store');
@@ -45,3 +47,9 @@ Route::post('authentication', 'authController@authLogin')->name('auth');
 Route::get('/auth/register', 'authController@create')->name('auth.create')->middleware('checkUser');
 Route::post('/auth/store', 'authController@store')->name('auth.store');//->middleware('checkUser');
 Route::get('/auth/logout',  'authController@logout' )->name('auth.logout');
+Route::get('/auth/index', 'authController@index')->name('auth.index');
+
+Route::get('auth/show/{id}', 'authController@show')->name('auth.show');
+Route::get('auth/edit/{id}', 'authController@edit')->name('auth.edit');
+Route::post('auth/update/{id}', 'authController@update')->name('auth.update');
+Route::delete('auth/delete/{id}', 'authController@destroy')->name('auth.destroy'); 

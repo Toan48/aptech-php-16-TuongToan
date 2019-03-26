@@ -463,51 +463,35 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">id</th>
-                                                <th>hình ảnh</th>
-                                                <th class="text-center">Tên xe</th>
-                                                <th class="text-center">Hãng</th>
-                                                <th class="text-center">năm sản xuất</th>
-                                                <th class="text-center">Giá</th>
-                                                <th class="text-center">Màu sắc</th>
-                                                <th class="text-center">loại xe</th>
-                                                <th class="text-center">động cơ</th>
-                                                <th class="text-center">hộp số</th>
-                                                <th class="text-center">nhiên liệu</th>
-                                                <th class="text-center">Chi tiết sản phẩm</th>
-                                                <th class="text-center">action</th>
+                                                <th>name</th>
+                                                <th>username</th>
+                                                <th>password</th>
+                                                <th>email</th>
+                                                <th>created_at</th>
+                                                <th>updated_at</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @foreach($cars as $car)            
+                                        <tbody>           
                                             <tr>
-                                                <td>{{$car->id}}</td>
-                                                <td><img src="{{asset('img/'.$car->image)}}" alt="" style="heigh:100px; width:100px;"></td>
-                                                <td>{{$car->name}}</td>
-                                                <td>{{$car->category_id}}</td>
-                                                <td>{{$car->year}}</td>
-                                                <td>{{$car->price}}</td>
-                                                <td>{{$car->color}}</td>
-                                                <td>{{$car->body_style}}</td>
-                                                <td>{{$car->engine}}</td>
-                                                <td>{{$car->transmission}}</td>
-                                                <td>{{$car->fuel_style}}</td>
-                                                <td>{!!$car->description!!}</td>
+                                                <td>{{$user->id}}</td>
+                                                <td>{{$user->name}}</td>
+                                                <td>{{$user->username}}</td>
+                                                <td>{{$user->password}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->created_at}}</td>
+                                                <td>{{$user->updated_at}}</td>
                                                 <td class="d-flex">
-                                                    <form action="{{route('admin.show', $car->id)}}" class="mr-2" method="GET">
-                                                        <button class="btn btn-warning" type="submit">show</button>
+                                                    <form action="{{route('auth.edit', $user->id)}}" class="mr-2" method="GET">
+                                                        <button class="btn btn-warning">edit</button>
                                                     </form>
-                                                    <form action="{{route('admin.destroy', $car->id)}}" method="post">
+                                                    <form action="" method="post">
                                                         <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
-                                                        <button class="btn btn-danger" type="submit">delete</button>
+                                                        <button class="btn btn-danger">delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
-                                            @endforeach
                                         </tbody>
                                     </table>
-                                    <form action="{{route('admin.create')}}" method="get">
-                                        <button class="btn btn-primary">create</button>
-                                    </form>
                                 </div>
                             </div>
                         </div>

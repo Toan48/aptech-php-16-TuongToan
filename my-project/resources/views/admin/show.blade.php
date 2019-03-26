@@ -10,14 +10,20 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Quản lý sản phẩm</title>
+    <title>Admin | Car Project</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    
+    <!-- chartist CSS -->
+    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
+    <!--This page css - Morris CSS -->
+    <link href="{{asset('admin/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('admin/car-admin/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="{{asset('admin/car-admin/css/colors/blue.css')}}" id="theme" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -367,15 +373,15 @@
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="add-product.html">Thêm mới</a></li>
-                                <li><a href="list-product.html">Quản lý</a></li>
-                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
+                                <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
+                                <li><a href="{{route('admin.index')}}">Quản lý</a></li>
+                                <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Thêm mới</a></li>
-                                <li><a href="#">Quản lý</a></li>
+                                <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
+                                <li><a href="">Quản lý</a></li>
                             </ul>
                         </li>
                     </ul>

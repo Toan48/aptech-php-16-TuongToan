@@ -11,8 +11,15 @@ class authController extends Controller
 {
     //
     public function login()
-    {
+    {   
+        
         return view('auth.login');
+    }
+
+    public function index()
+    {
+        $users = User::get();
+        return view('adminUsers.list-users',  ['users' => $users]);
     }
 
 
@@ -34,7 +41,7 @@ class authController extends Controller
 
     public function create()
     {
-        return view('auth.register');
+        return view('adminUsers.create');
     }
 
     public function store(Request $request)
@@ -45,11 +52,42 @@ class authController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+        return redirect()->route('auth.index');
     }
 
     public function logout()
     {
         Auth::logout();
         return redirect()->route('auth.login');
+    }
+
+    public function show($id)
+    {   
+        $user = User::find($id);
+        return view('adminUsers.show', ['user' => $user]);
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('adminUsers.edit', ['user'=>$user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->route('auth.index');
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('auth.index');
     }
 }

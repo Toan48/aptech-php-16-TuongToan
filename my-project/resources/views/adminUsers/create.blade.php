@@ -9,17 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Admin | Car Project</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Thêm Sản Phẩm</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    
-    <!-- chartist CSS -->
-    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
-    <link href="{{asset('admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
-    <!--This page css - Morris CSS -->
-    <link href="{{asset('admin/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/admin/assets/plugins/icheck/skins/all.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.css')}}" />
     <!-- Custom CSS -->
     <link href="{{asset('admin/car-admin/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -185,8 +180,6 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
-                        
-                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -290,7 +283,6 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
-                        
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -340,9 +332,9 @@
                 <!-- User profile -->
                 <div class="user-profile" style="background: url({{asset('admin/assets/images/background/user-info.jpg')}} no-repeat;">
                     <!-- User profile image -->
-                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}"  alt="user" /> </div>
+                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}" alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Trương Lâm</a>
                         <div class="dropdown-menu animated flipInY">
                             <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
@@ -373,15 +365,15 @@
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
-                                <li><a href="{{route('admin.index')}}">Quản lý</a></li>
-                                <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
+                                <li><a href="add-product.html">Thêm mới</a></li>
+                                <li><a href="list-product.html">Quản lý</a></li>
+                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
-                                <li><a href="">Quản lý</a></li>
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -416,10 +408,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Quản lý sản phẩm</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Thêm sản phẩm</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Quản lý sản phẩm</li>
+                            <li class="breadcrumb-item active">Thêm sản phẩm</li>
                         </ol>
                     </div>
                     <div class="col-md-7 col-4 align-self-center">
@@ -456,65 +448,40 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Quản lý sản phẩm</h4>
-                                <h6 class="card-subtitle">Menu quản lý sản phẩm</h6>
-                                <div class="table-responsive m-t-40">
-                                    <table id="myTable" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">id</th>
-                                                <th>hình ảnh</th>
-                                                <th class="text-center">Tên xe</th>
-                                                <th class="text-center">Hãng</th>
-                                                <th class="text-center">năm sản xuất</th>
-                                                <th class="text-center">Giá</th>
-                                                <th class="text-center">Màu sắc</th>
-                                                <th class="text-center">loại xe</th>
-                                                <th class="text-center">động cơ</th>
-                                                <th class="text-center">hộp số</th>
-                                                <th class="text-center">nhiên liệu</th>
-                                                <th class="text-center">Chi tiết sản phẩm</th>
-                                                <th class="text-center">action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($cars as $car)            
-                                            <tr>
-                                                <td>{{$car->id}}</td>
-                                                <td><img src="{{asset('img/'.$car->image)}}" alt="" style="heigh:100px; width:100px;"></td>
-                                                <td>{{$car->name}}</td>
-                                                <td>{{$car->category_id}}</td>
-                                                <td>{{$car->year}}</td>
-                                                <td>{{$car->price}}</td>
-                                                <td>{{$car->color}}</td>
-                                                <td>{{$car->body_style}}</td>
-                                                <td>{{$car->engine}}</td>
-                                                <td>{{$car->transmission}}</td>
-                                                <td>{{$car->fuel_style}}</td>
-                                                <td>{!!$car->description!!}</td>
-                                                <td class="d-flex">
-                                                    <form action="{{route('admin.show', $car->id)}}" class="mr-2" method="GET">
-                                                        <button class="btn btn-warning" type="submit">show</button>
-                                                    </form>
-                                                    <form action="{{route('admin.destroy', $car->id)}}" method="post">
-                                                        <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
-                                                        <button class="btn btn-danger" type="submit">delete</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                    <form action="{{route('admin.create')}}" method="get">
-                                        <button class="btn btn-primary">create</button>
-                                    </form>
-                                </div>
+                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <h6 class="card-subtitle">Giao diện trang thêm mới sản phẩm</h6>
+                                <form class="form-material m-t-40" action="{{route('auth.store')}}" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
+                                    <div class="form-group">
+                                        <label>user name</label>
+                                        <input type="text" class="form-control form-control-line" name="username">
+                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>name</label>
+                                        <input type="text" class="form-control form-control-line" name="name">
+                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="brand" >email</label>
+                                        <input type="email" class="form-control form-control-line" name="email" placeholder="">
+                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="brand">password</label>
+                                        <input type="password" class="form-control form-control-line" name="password">
+                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                    </div>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">tạo user</button>
+                                </form>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
+
+                
+                <!-- End Page Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
@@ -580,7 +547,9 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2019 by Lâm đẹp trai</footer>
+            <footer class="footer">
+                © 2019 by Lâm đẹp trai
+            </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -610,68 +579,28 @@
     <script src="{{asset('admin/assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('admin/car-admin/js/custom.min.js')}}"></script>
-    <!-- This is data table -->
-    <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <!-- start - This is for export functionality only -->
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <!-- end - This is for export functionality only -->
-    <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
-        $(document).ready(function() {
-            var table = $('#example').DataTable({
-                "columnDefs": [{
-                    "visible": false,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function(settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function(group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
-                }
-            });
-            // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
-        });
-    });
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
-    </script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <script src="{{asset('admin/car-admin/js/jasny-bootstrap.js')}}"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{asset('admin/assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <!-- icheck -->
+    <script src="{{asset('admin/assets/plugins/icheck/icheck.min.js')}}"></script>
+    <script src="{{asset('admin/assets/plugins/icheck/icheck.init.js')}}"></script>
+    <!-- wysuhtml5 Plugin JavaScript -->
+    <script src="{{asset('admin/assets/plugins/html5-editor/wysihtml5-0.3.0.js')}}"></script>
+    <script src="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.js')}}"></script>
+    <script>
+    $(document).ready(function() {
+
+        $('.textarea_editor').wysihtml5();
+
+
+    });
+    </script>
 </body>
 
 </html>
