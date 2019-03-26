@@ -203,40 +203,11 @@
                             </div>
             
                           </div>
-                          @endforeach
-                          
-                        
-                        </div>
-            
+                          @endforeach                                                
+                        </div>         
                       </div>
-                      <div class="toolbar">
-            
-                        <div class="pager">
-                          <div id="limiter">
-                            <label>View: </label>
-                            <ul>
-                              <li><a href="#">15<span class="right-arrow"></span></a>
-                                <ul>
-                                  <li><a href="#">20</a></li>
-                                  <li><a href="#">30</a></li>
-                                  <li><a href="#">35</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="pages">
-                            <label>Page:</label>
-                            <ul class="pagination">
-                              <li><a href="#">«</a></li>
-                              <li class="active"><a href="#">1</a></li>
-                              <li><a href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">4</a></li>
-                              <li><a href="#">5</a></li>
-                              <li><a href="#">»</a></li>
-                            </ul>
-                          </div>
-                        </div>
+                      <div class="d-flex justify-content-center">
+                        {{$cars->links()}}
                       </div>
                     </div>
                   </div>

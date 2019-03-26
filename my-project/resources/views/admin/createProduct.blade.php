@@ -305,7 +305,7 @@
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="{{route('auth.logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -347,37 +347,37 @@
                 <!-- End User profile text-->
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-small-cap">TRANG QUẢN LÝ</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Đơn hàng</a></li>
-                                <li><a href="#">Tin tức</a></li>
-                                <li><a href="#">Yêu cầu</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Thêm mới</a></li>
-                                <li><a href="#">Quản lý</a></li>
-                                <li><a href="#">Danh mục tin tức</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="add-product.html">Thêm mới</a></li>
-                                <li><a href="list-product.html">Quản lý</a></li>
-                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Thêm mới</a></li>
-                                <li><a href="#">Quản lý</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                        <ul id="sidebarnav">
+                            <li class="nav-small-cap">TRANG QUẢN LÝ</li>
+                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="#">Đơn hàng</a></li>
+                                    <li><a href="#">Tin tức</a></li>
+                                    <li><a href="#">Yêu cầu</a></li>
+                                </ul>
+                            </li>
+                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="#">Thêm mới</a></li>
+                                    <li><a href="#">Quản lý</a></li>
+                                    <li><a href="#">Danh mục tin tức</a></li>
+                                </ul>
+                            </li>
+                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
+                                    <li><a href="{{route('admin.index')}}">Quản lý</a></li>
+                                    <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
+                                </ul>
+                            </li>
+                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
+                                    <li><a href="{{route('auth.index')}}">Quản lý</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
