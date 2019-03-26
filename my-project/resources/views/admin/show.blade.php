@@ -9,16 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Thêm Sản Phẩm</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
+    <title>Quản lý sản phẩm</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('/admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/admin/assets/plugins/icheck/skins/all.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.css')}}" />
+    <link href="{{asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('admin/car-admin/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="{{asset('admin/car-admin/css/colors/blue.css')}}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -180,6 +179,8 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
+                        
+                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -283,6 +284,7 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
+                        
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -332,9 +334,9 @@
                 <!-- User profile -->
                 <div class="user-profile" style="background: url({{asset('admin/assets/images/background/user-info.jpg')}} no-repeat;">
                     <!-- User profile image -->
-                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}" alt="user" /> </div>
+                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}"  alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Trương Lâm</a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
                         <div class="dropdown-menu animated flipInY">
                             <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
@@ -408,10 +410,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Thêm sản phẩm</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Quản lý sản phẩm</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Thêm sản phẩm</li>
+                            <li class="breadcrumb-item active">Quản lý sản phẩm</li>
                         </ol>
                     </div>
                     <div class="col-md-7 col-4 align-self-center">
@@ -448,86 +450,60 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Thêm sản phẩm</h4>
-                                <h6 class="card-subtitle">Giao diện trang thêm mới sản phẩm</h6>
-                                <form class="form-material m-t-40" action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
-                                    <div class="form-group">
-                                        <label>Tên sản phẩm</label>
-                                        <input type="text" class="form-control form-control-line" name="name">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>năm sản xuất</label>
-                                        <input type="text" class="form-control form-control-line" name="year">
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand">Hãng</label>
-                                        <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
-                                            <option selected disabled>Choose...</option>
-                                            @foreach($categories as $category)      
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <p class="help is-danger">{{ $errors->first('categories') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand" >Giá</label>
-                                        <input type="text" class="form-control form-control-line" name="price" placeholder="USD$">
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand">hộp số</label>
-                                        <input type="text" class="form-control form-control-line" name="transmission">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>body style</label>
-                                        <input type="text" class="form-control form-control-line" name="body_style">
-                                        <p class="help is-danger">{{ $errors->first('body_style') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>động cơ</label>
-                                        <input type="text" class="form-control form-control-line" name="engine">
-                                        <p class="help is-danger">{{ $errors->first('engine') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>màu sắc</label>
-                                        <input type="text" class="form-control form-control-line" name="color">
-                                        <p class="help is-danger">{{ $errors->first('color') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>nhiên liệu</label>
-                                        <input type="text" class="form-control form-control-line" name="fuel_style">
-                                        <p class="help is-danger">{{ $errors->first('fuel_style') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>hình ảnh</label>         
-                                        <input type="file" name="image" class="form-control"> 
-                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
-                                    </div>
-                                    <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Chi tiết sản phẩm</h4>
-                                                <h6 class="card-subtitle">Mô tả chi tiết cho sản phẩm...</h6>
-                                                <div class="form-group">
-                                                <textarea class="textarea_editor form-control" rows="15" placeholder="Enter text ..." name="description">
-                                                </textarea>
-                                                <p class="help is-danger">{{ $errors->first('description') }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Đăng sản phẩm</button>
-                                </form>
+                                <h4 class="card-title">Quản lý sản phẩm</h4>
+                                <h6 class="card-subtitle">Menu quản lý sản phẩm</h6>
+                                <div class="table-responsive m-t-40">
+                                    <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">id</th>
+                                                <th>hình ảnh</th>
+                                                <th class="text-center">Tên xe</th>
+                                                <th class="text-center">Hãng</th>
+                                                <th class="text-center">năm sản xuất</th>
+                                                <th class="text-center">Giá</th>
+                                                <th class="text-center">Màu sắc</th>
+                                                <th class="text-center">loại xe</th>
+                                                <th class="text-center">động cơ</th>
+                                                <th class="text-center">hộp số</th>
+                                                <th class="text-center">nhiên liệu</th>
+                                                <th class="text-center">Chi tiết sản phẩm</th>
+                                                <th class="text-center">action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>           
+                                            <tr>
+                                                <td>{{$car->id}}</td>
+                                                <td><img src="{{asset('img/'.$car->image)}}" alt="" style="heigh:100px; width:100px;"></td>
+                                                <td>{{$car->name}}</td>
+                                                <td>{{$car->category_id}}</td>
+                                                <td>{{$car->year}}</td>
+                                                <td>{{$car->price}}</td>
+                                                <td>{{$car->color}}</td>
+                                                <td>{{$car->body_style}}</td>
+                                                <td>{{$car->engine}}</td>
+                                                <td>{{$car->transmission}}</td>
+                                                <td>{{$car->fuel_style}}</td>
+                                                <td>{!!$car->description!!}</td>
+                                                <td class="d-flex">
+                                                    <form action="{{route('admin.edit', $car->id)}}" class="mr-2" method="GET">
+                                                        <button class="btn btn-warning">edit</button>
+                                                    </form>
+                                                    <form action="{{route('admin.destroy', $car->id)}}" method="post">
+                                                        <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
+                                                        <button class="btn btn-danger">delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-
-                
-                <!-- End Page Content -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
@@ -593,9 +569,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer">
-                © 2019 by Lâm đẹp trai
-            </footer>
+            <footer class="footer"> © 2019 by Lâm đẹp trai</footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -625,28 +599,68 @@
     <script src="{{asset('admin/assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('admin/car-admin/js/custom.min.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <script src="{{asset('admin/car-admin/js/jasny-bootstrap.js')}}"></script>
+    <!-- This is data table -->
+    <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    </script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{asset('admin/assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
-    <!-- icheck -->
-    <script src="{{asset('admin/assets/plugins/icheck/icheck.min.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/icheck/icheck.init.js')}}"></script>
-    <!-- wysuhtml5 Plugin JavaScript -->
-    <script src="{{asset('admin/assets/plugins/html5-editor/wysihtml5-0.3.0.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.js')}}"></script>
-    <script>
-    $(document).ready(function() {
-
-        $('.textarea_editor').wysihtml5();
-
-
-    });
-    </script>
 </body>
 
 </html>

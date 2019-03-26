@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class createProductRequest extends FormRequest
@@ -26,39 +26,38 @@ class createProductRequest extends FormRequest
         return [
             //
             'name' => [
-                'required', 'size:50'
+                'required', 
             ],
             'year' => [
-                'required', 'numeric'
+                'required', 'numeric',
             ],
             'body_style' => [
-                'required', 'size:20',
+                'required', 
             ],
             'engine' => [
-                'required', 'size:20'
+                'required',
             ],
             'price' => [
-                'required', 'numeric'
+                'required', 'numeric',
             ],
             'transmission' => [
-                'required', 'size:50'
+                'required', 
             ],
             'color' => [
-                'required', 'size: 50', 'string'
+                'required', 'string',
             ],
             'categories' => [
-                'required'
+                'required',
             ],
             'fuel_style' => [
-                'required', 'string', 'size:20'
+                'required', 'string',
             ],
             'image' => [
-                'required', 'image'
+                'required', 'image',
             ],
             'description' => [
-                'required'
-            ],
-
+                'required',
+            ]
         ];
     }
 }

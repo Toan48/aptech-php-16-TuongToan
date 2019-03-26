@@ -448,21 +448,19 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Thêm sản phẩm</h4>
-                                <h6 class="card-subtitle">Giao diện trang thêm mới sản phẩm</h6>
-                                <form class="form-material m-t-40" action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
+                                <h4 class="card-title">sửa thông tin sản phẩm</h4>
+                                <h6 class="card-subtitle">Giao diện trang sửa thông tin sản phẩm</h6>
+                                <form class="form-material m-t-40" action="{{route('admin.update', $car->id)}}" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input type="text" class="form-control form-control-line" name="name">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="name" value="{{$car->name}}">
                                     </div>
                                     <div class="form-group">
                                         <label>năm sản xuất</label>
-                                        <input type="text" class="form-control form-control-line" name="year">
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="year" value="{{$car->year}}"/>
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="brand">Hãng</label>
                                         <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
                                             <option selected disabled>Choose...</option>
@@ -470,55 +468,46 @@
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
-                                        <p class="help is-danger">{{ $errors->first('categories') }}</p>
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
                                         <label for="brand" >Giá</label>
-                                        <input type="text" class="form-control form-control-line" name="price" placeholder="USD$">
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="price" placeholder="USD$" value={{$car->price}}>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">hộp số</label>
-                                        <input type="text" class="form-control form-control-line" name="transmission">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="transmission" value="{{$car->transmission}}">
                                     </div>
                                     <div class="form-group">
                                         <label>body style</label>
-                                        <input type="text" class="form-control form-control-line" name="body_style">
-                                        <p class="help is-danger">{{ $errors->first('body_style') }}</p>
+                                    <input type="text" class="form-control form-control-line"              name="body_style" value="{{$car->body_style}}">
                                     </div>
                                     <div class="form-group">
                                         <label>động cơ</label>
-                                        <input type="text" class="form-control form-control-line" name="engine">
-                                        <p class="help is-danger">{{ $errors->first('engine') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="engine" value="{{$car->engine}}">
                                     </div>
                                     <div class="form-group">
                                         <label>màu sắc</label>
-                                        <input type="text" class="form-control form-control-line" name="color">
-                                        <p class="help is-danger">{{ $errors->first('color') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="color" value="{{$car->color}}">
                                     </div>
                                     <div class="form-group">
                                         <label>nhiên liệu</label>
-                                        <input type="text" class="form-control form-control-line" name="fuel_style">
-                                        <p class="help is-danger">{{ $errors->first('fuel_style') }}</p>
+                                        <input type="text" class="form-control form-control-line" name="fuel_style" value="{{$car->fuel_style}}">
                                     </div>
                                     <div class="form-group">
                                         <label>hình ảnh</label>         
                                         <input type="file" name="image" class="form-control"> 
-                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
                                     </div>
                                     <div class="card">
                                             <div class="card-body">
                                                 <h4 class="card-title">Chi tiết sản phẩm</h4>
                                                 <h6 class="card-subtitle">Mô tả chi tiết cho sản phẩm...</h6>
                                                 <div class="form-group">
-                                                <textarea class="textarea_editor form-control" rows="15" placeholder="Enter text ..." name="description">
+                                                <textarea class="textarea_editor form-control" rows="15" placeholder="" name="description" value="">
                                                 </textarea>
-                                                <p class="help is-danger">{{ $errors->first('description') }}</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Đăng sản phẩm</button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">update</button>
                                 </form>
                             </div>
                         </div>

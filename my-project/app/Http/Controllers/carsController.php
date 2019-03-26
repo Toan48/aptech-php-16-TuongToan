@@ -17,7 +17,7 @@ class carsController extends Controller
     public function index()
     {
         //
-        $cars = car::paginate(12);
+        $cars = car::paginate(20);
         return view('cars.index', ['cars' => $cars]);
     }
 
@@ -43,24 +43,24 @@ class carsController extends Controller
     {
         //
         
-        $car = new car;
-        $car->name = $request->name;
-        $car->year = $request->year;
-        $car->body_style = $request->body_style;
-        $car->engine = $request->engine;
-        $car->price = $request->price;
-        $car->transmission = $request->transmission;
-        $car->color = $request->color;
-        $car->fuel_style = $request->fuel_style; 
-        $car->category_id = $request->categories;
-        //up image to database
-        $filename = $request->file('image')->getClientOriginalName();
-        $path = public_path('img');
-        $request->file('image')->move($path, $filename);
-        $car->image = $filename;
-        $car->description = $request->description;
-        $car->save();
-        return redirect()->route('cars.index');
+        // $car = new car;
+        // $car->name = $request->name;
+        // $car->year = $request->year;
+        // $car->body_style = $request->body_style;
+        // $car->engine = $request->engine;
+        // $car->price = $request->price;
+        // $car->transmission = $request->transmission;
+        // $car->color = $request->color;
+        // $car->fuel_style = $request->fuel_style; 
+        // $car->category_id = $request->categories;
+        // //up image to database
+        // $filename = $request->file('image')->getClientOriginalName();
+        // $path = public_path('img');
+        // $request->file('image')->move($path, $filename);
+        // $car->image = $filename;
+        // $car->description = $request->description;
+        // $car->save();
+        // return redirect()->route('cars.index');
     }
 
     /**
