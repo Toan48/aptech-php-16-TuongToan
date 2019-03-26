@@ -484,9 +484,9 @@
                                                     <form action="{{route('auth.edit', $user->id)}}" class="mr-2" method="GET">
                                                         <button class="btn btn-warning">edit</button>
                                                     </form>
-                                                    <form action="" method="post">
-                                                        <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
-                                                        <button class="btn btn-danger">delete</button>
+                                                    <form action="{{route('auth.destroy', $user->id)}}" method="POST">
+                                                            <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
+                                                            <button class="btn btn-danger" type="submit">delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
