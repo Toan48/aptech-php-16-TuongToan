@@ -53,3 +53,8 @@ Route::get('auth/show/{id}', 'authController@show')->name('auth.show');
 Route::get('auth/edit/{id}', 'authController@edit')->name('auth.edit');
 Route::post('auth/update/{id}', 'authController@update')->name('auth.update');
 Route::delete('auth/delete/{id}', 'authController@destroy')->name('auth.destroy'); 
+
+//search
+//Route::get('/search', 'searchController')
+Route::get('/car/{id}', 'searchController@show');
+Route::get('/search/name', 'searchController@searchByName')->name('name.search');
