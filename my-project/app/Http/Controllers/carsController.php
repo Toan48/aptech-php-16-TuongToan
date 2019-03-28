@@ -115,4 +115,12 @@ class carsController extends Controller
     {
         return view('cars.home');
     }
+    
+    
+    public function dealOfWeek()
+    {
+        $dealCars = car::where('deal_of_week', 1)->get();
+        return view('cars.home', ['dealCars' => $dealCars]);
+
+    }
 }

@@ -78,7 +78,7 @@
                         <div class="my-3">
                                 <div class="form-group">
                                     {{-- {!! Form::text('search_text', null, array('placeholder' => 'Search Text','class' => 'form-control','id'=>'search_text')) !!} --}}
-                                    <input type="text" name="search" placeholder="type something" class="form-control" id="search_text" value="{{ old('search') }}">
+                                    <input type="text" name="search" placeholder="type car's name" class="form-control" id="search_text" value="{{ old('search') }}">
                                 </div>
                         </div>
                         <div>
@@ -130,6 +130,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="w-100 display-slick">
+                     
                         <div class="display-image">
                             <a href="#" class="product-image">
                                 <img src="{{asset('assets/img/p1.jpg')}}" alt=""></a>
@@ -145,9 +146,7 @@
                             <div class="sale-label sale-top-left">-15%</div>
                             <div class="item-info">
                                 <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
+                                    <div class="item-title"><a href="#" title="Retis lapen casen"></a> </div>
                                     <div class="item-content">
                                         <div class="rating">
                                             <div class="ratings">
@@ -160,23 +159,24 @@
                                         </div>
                                         <div class="item-price">
                                             <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$49000.00</span> </span>
+                                                        class="price"></span> </span>
                                             </div>
                                         </div>
                                         <div class="other-info">
                                             <div class="col-km">
-                                                <i class="fas fa-tachometer"></i>4875km</div>
+                                                <i class="fas fa-tachometer"></i></div>
                                             <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
+                                                <i class="fa fa-gear"></i></div>
                                             <div class="col-date">
                                                 <i class="fa fa-calendar" aria-hidden="true">
 
-                                                </i> 2018</div>
+                                                </i></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>           
+                        </div>
+                         
                     </div>
                 </div>
             </div>

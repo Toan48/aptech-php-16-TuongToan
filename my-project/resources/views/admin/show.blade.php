@@ -474,6 +474,8 @@
                                                 <th class="text-center">hộp số</th>
                                                 <th class="text-center">nhiên liệu</th>
                                                 <th class="text-center">Chi tiết sản phẩm</th>
+                                                <th class="text-center">deal of week</th>
+                                                <th class="text-center">best sale</th>
                                                 <th class="text-center">action</th>
                                             </tr>
                                         </thead>
@@ -491,6 +493,8 @@
                                                 <td>{{$car->transmission}}</td>
                                                 <td>{{$car->fuel_style}}</td>
                                                 <td>{!!$car->description!!}</td>
+                                                <td>{{$car->deal_of_week}}</td>
+                                                <td>{{$car->best_sale}}</td>   
                                                 <td class="d-flex">
                                                     <form action="{{route('admin.edit', $car->id)}}" class="mr-2" method="GET">
                                                         <button class="btn btn-warning">edit</button>

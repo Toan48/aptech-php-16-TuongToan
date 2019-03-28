@@ -44,7 +44,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //auth
 Route::get('auth/admin', 'authController@login')->name('auth.login');
 Route::post('authentication', 'authController@authLogin')->name('auth');
-Route::get('/auth/register', 'authController@create')->name('auth.create')->middleware('checkUser');
+Route::get('/auth/register', 'authController@create')->name('auth.create');//->middleware('checkUser');
 Route::post('/auth/store', 'authController@store')->name('auth.store');//->middleware('checkUser');
 Route::get('/auth/logout',  'authController@logout' )->name('auth.logout');
 Route::get('/auth/index', 'authController@index')->name('auth.index');
@@ -58,3 +58,5 @@ Route::delete('auth/delete/{id}', 'authController@destroy')->name('auth.destroy'
 //Route::get('/search', 'searchController')
 Route::get('/car/{id}', 'searchController@show');
 Route::get('/search/name', 'searchController@searchByName')->name('name.search');
+
+Route::get('test', 'carsController@dealOfWeek');

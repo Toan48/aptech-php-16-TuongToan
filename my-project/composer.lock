@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ad2cbdbca32f1f4df96833bd49337b3",
+    "content-hash": "ceb6e36e102e06871c5d5f06afb5c11e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1327,6 +1327,53 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "pelmered/fake-car",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pelmered/fake-car.git",
+                "reference": "e128df4ae865accfe1b619e5ae53204ed58bae64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/e128df4ae865accfe1b619e5ae53204ed58bae64",
+                "reference": "e128df4ae865accfe1b619e5ae53204ed58bae64",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "^1",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\Provider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Elmered",
+                    "email": "peter@elmered.com"
+                }
+            ],
+            "description": "Fake-Car is a Faker provider that generates fake car data for you.",
+            "keywords": [
+                "car",
+                "car-faker",
+                "fake-car",
+                "faker",
+                "vehicle"
+            ],
+            "time": "2019-03-07T12:08:13+00:00"
         },
         {
             "name": "psr/container",

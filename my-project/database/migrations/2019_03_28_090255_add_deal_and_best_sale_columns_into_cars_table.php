@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EditUserTable extends Migration
+class AddDealAndBestSaleColumnsIntoCarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class EditUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('cars', function (Blueprint $table) {
             //
-            $table->string('username')->unique();
-
+            $table->tinyInteger('deal_of_week')->default('0');
+            $table->tinyInteger('best_sale')->default('0');
         });
     }
 
@@ -27,7 +27,7 @@ class EditUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('cars', function (Blueprint $table) {
             //
         });
     }
