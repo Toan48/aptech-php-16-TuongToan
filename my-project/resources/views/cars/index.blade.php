@@ -164,7 +164,7 @@
                                 <img src="{{asset('img/'.$car->image)}}" alt="">
                               </a>
                               <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
+                                <a href="{{route('cars.show', $car->id)}}">
                                   <i class="fas fa-search"></i>
                                 </a>
                                 <a href="#">

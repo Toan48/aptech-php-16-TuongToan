@@ -23,9 +23,10 @@ class CreateCarsTable extends Migration
             $table->string('transmission');
             $table->string('color')->nullable();
             $table->string('fuel_style');
-            $table->integer('category_id')->nullable();
+            $table->integer('category_id')->unsigned();
             $table->longText('image')->nullable();
             $table->longText('description')->nullable();
+    
             $table->timestamps();
         });
     }

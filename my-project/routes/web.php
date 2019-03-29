@@ -20,7 +20,6 @@ Route::get('cars/create', 'carsController@create')->name('cars.create');
 Route::post('cars/store', 'carsController@store')->name('cars.store');
 Route::get('cars/show/{id}', 'carsController@show')->name('cars.show');
 Route::get('cars/index', 'carsController@index')->name('cars.index');
-Route::get('cars/show/', 'carsController@show')->name('cars.show');
 Route::get('cars/home', 'carsController@home')->name('cars.home');
 
 //admin
@@ -59,4 +58,3 @@ Route::delete('auth/delete/{id}', 'authController@destroy')->name('auth.destroy'
 Route::get('/car/{id}', 'searchController@show');
 Route::get('/search/name', 'searchController@searchByName')->name('name.search');
 
-Route::get('test', 'carsController@dealOfWeek');

@@ -15,7 +15,8 @@ class EditCarTable extends Migration
     {
         Schema::table('cars', function (Blueprint $table) {
             //
-            $table->integer('category_id')->nullable()->change();
+            $table->foreign('category_id')->references('id')->on('categories');
+            
         });
     }
 

@@ -17,9 +17,11 @@ class carsController extends Controller
     public function index()
     {
         //
+        
         $cars = car::paginate(12);
-        // dd($cars);
+  
         return view('cars.index', ['cars' => $cars]);
+
     }
 
     /**
@@ -112,15 +114,24 @@ class carsController extends Controller
     }
 
     public function home()
-    {
-        return view('cars.home');
+    {    
+        $dealCars = car::where('deal_of_week', 1)->get();
+        $bestsale = car::where('best_sale', 1)->get();
+        return view('cars.home', ['dealCars' => $dealCars], ['bestsale' => $bestsale]);
     }
     
     
     public function dealOfWeek()
     {
-        $dealCars = car::where('deal_of_week', 1)->get();
-        return view('cars.home', ['dealCars' => $dealCars]);
+        // $dealCars = car::where('deal_of_week', 1)->get();
+        // return view('cars.home', ['dealCars' => $dealCars]);
 
+    }
+
+    public function bestSale()
+    {
+        // $bestsale = car::where('best_sale', 1)->get();
+        // dd($bestsale);
+        // return view('cars.home', ['bestsale' => $bestsale]);
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CÔ GIÁO THẢO</title>
+    <title>Home page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('assets/css/header.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/slide.css')}}">
@@ -20,7 +20,7 @@
     
    
 
-</head>
+
    
 </head>
 
@@ -124,59 +124,59 @@
     <!-- hot_deals -->
     <div class="hot_deals">
         <div class="new-title">
-            <h2>Deals of the Week</h2>
+            <h2>Deals of the Week </h2>
         </div>
         <div class="display">
             <div class="container-fluid">
                 <div class="row">
                     <div class="w-100 display-slick">
-                     
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p1.jpg')}}" alt=""></a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="new-label new-top-left">Used</div>
-                            <div class="sale-label sale-top-left">-15%</div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen"></a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
-                                                </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
+                    @foreach($dealCars as $dealCar)
+                    <div class="display-image">
+                        <a href="#" class="product-image">
+                            <img src="{{asset('img/'.$dealCar->image)}}" alt=""></a>
+                        <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                        </div>
+                        <div class="new-label new-top-left">Used</div>
+                        <div class="sale-label sale-top-left">-15%</div>
+                        <div class="item-info">
+                            <div class="info-inner">
+                                <div class="item-title"><a href="#" title="Retis lapen casen">{{$dealCar->name}}</a> </div>
+                                <div class="item-content">
+                                    <div class="rating">
+                                        <div class="ratings">
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:80%"></div>
                                             </div>
+                                            <p class="rating-links"><a href="#">1 Review(s)</a> <span
+                                                    class="separator">|</span> <a href="#">Add Review</a> </p>
                                         </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price"></span> </span>
-                                            </div>
+                                    </div>
+                                    <div class="item-price">
+                                        <div class="price-box"><span class="regular-price"><span
+                                                    class="price">${{$dealCar->price}}</span> </span>
                                         </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fas fa-tachometer"></i></div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i></div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true">
+                                    </div>
+                                    <div class="other-info">
+                                        <div class="col-km">
+                                            <i class="fas fa-tachometer"></i>4875km</div>
+                                        <div class="col-engine">
+                                            <i class="fa fa-gear"></i>{{$dealCar->transmission}}</div>
+                                        <div class="col-date">
+                                            <i class="fa fa-calendar" aria-hidden="true">
 
-                                                </i></div>
-                                        </div>
+                                            </i>{{$dealCar->year}}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         
+                    </div>
+                    @endforeach()
                     </div>
                 </div>
             </div>
@@ -238,274 +238,52 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="w-100 display-slick">
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p3.jpg')}}" alt=""></a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="new-label new-top-left">Used</div>
-                            <div class="sale-label sale-top-left">-15%</div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
-                                                </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$49000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fas fa-tachometer"></i>4875km</div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true">
-
-                                                </i> 2018</div>
-                                        </div>
+                        @foreach($bestsale as $bestsale)
+                            <div class="display-image">
+                                    <a href="#" class="product-image">
+                                        <img src="{{asset('img/'.$bestsale->image)}}" alt=""></a>
+                                    <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                                        <a href="#">
+                                            <i class="fas fa-search"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fas fa-heart"></i>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p6.jpg')}}" alt="">
-                            </a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
+                                    <div class="new-label new-top-left">Used</div>
+                                    <div class="sale-label sale-top-left">-15%</div>
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title"><a href="#" title="Retis lapen casen">{{$bestsale->name}}</a> </div>
+                                            <div class="item-content">
+                                                <div class="rating">
+                                                    <div class="ratings">
+                                                        <div class="rating-box">
+                                                            <div class="rating" style="width:80%"></div>
+                                                        </div>
+                                                        <p class="rating-links"><a href="#">1 Review(s)</a> <span
+                                                                class="separator">|</span> <a href="#">Add Review</a> </p>
+                                                    </div>
                                                 </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$39000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km"><i class="fa fa-tachometer"></i> 4875km</div>
-                                            <div class="col-engine"><i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p8.jpg')}}" alt="">
-                            </a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
+                                                <div class="item-price">
+                                                    <div class="price-box"><span class="regular-price"><span
+                                                                class="price">{{$bestsale->price}}</span> </span>
+                                                    </div>
                                                 </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$99000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fa fa-tachometer"></i> 4875km</div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p16.jpg')}}" alt="">
-                            </a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
+                                                <div class="other-info">
+                                                    <div class="col-km">
+                                                        <i class="fas fa-tachometer"></i>4875km</div>
+                                                    <div class="col-engine">
+                                                        <i class="fa fa-gear"></i>{{$bestsale->transmission}}</div>
+                                                    <div class="col-date">
+                                                        <i class="fa fa-calendar" aria-hidden="true">
+        
+                                                        </i>{{$bestsale->year}}</div>
                                                 </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
                                             </div>
                                         </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$67000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fa fa-tachometer"></i> 4875km</div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true">
-
-                                                </i> 2018</div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p17.jpg')}}" alt="">
-                            </a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
-                                                </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$47000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fa fa-tachometer"></i> 4875km</div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="display-image">
-                            <a href="#" class="product-image">
-                                <img src="{{asset('assets/img/p18.jpg')}}" alt="">
-                            </a>
-                            <div class="button"><a href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                                <a href="#">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="#" title="Retis lapen casen">Gorgeous Mercedes-Benz
-                                            E-Class
-                                            All-Terrain Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
-                                                </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$59000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km">
-                                                <i class="fa fa-tachometer"></i> 4875km</div>
-                                            <div class="col-engine">
-                                                <i class="fa fa-gear"></i> Automatic</div>
-                                            <div class="col-date">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i> 2018
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach   
                     </div>
                 </div>
             </div>
@@ -881,44 +659,9 @@
                 // instead of a settings object
             ]
         });
+        </script>
 
-    </script>
-    {{-- typeahead --}}
-    <script type="text/javascript">
-         // jQuery wait till the page is fullt loaded
-            $(document).ready(function () {
-                // keyup function looks at the keys typed on the search box
-                $('#search_text').on('keyup',function() {
-                    // the text typed in the input field is assigned to a variable 
-                    var query = $(this).val();
-                    // call to an ajax function
-                    $.ajax({
-                        // assign a controller function to perform search action - route name is search
-                        url:"{{ route('name.search') }}",
-                        // since we are getting data methos is assigned as GET
-                        type:"GET",
-                        // data are sent the server
-                        data:{'car':query},
-                        // if search is succcessfully done, this callback function is called
-                        success:function (data) {
-                            // print the search results in the div called country_list(id)
-                            $('#country_list').html(data);
-                        }
-                    })
-                    // end of ajax call
-                });
-
-                // initiate a click function on each search result
-                $(document).on('click', 'li', function(){
-                    // declare the value in the input field to a variable
-                    var value = $(this).text();
-                    // assign the value to the search box
-                    $('#search_text').val(value);
-                    // after click is done, search results segment is made empty
-                    $('#country_list').html("");
-                });
-            });
-    </script>
+    
 
 </body>
 
