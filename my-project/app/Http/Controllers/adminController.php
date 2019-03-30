@@ -7,6 +7,8 @@ use App\car;
 use App\Http\Requests\createProductRequest;
 use Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use App\images_product;
+
 
 
 class adminController extends Controller
@@ -41,9 +43,9 @@ class adminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createProductRequest $request)
+    public function store(Request $request)
     {
-   
+        
         //store
         $car = new car;
         $car->name = $request->name;
@@ -62,6 +64,23 @@ class adminController extends Controller
         $car->image = $filename;
         $car->description = $request->description;
         $car->save();
+        //upload images to images_product table
+        
+        if($request->hasfile('images_list'))
+        {
+            foreach($request->file('images_list') as $file)
+            {
+                $name = $file->getClientOriginalName();
+                $path = public_path('img');
+                $file->move($path, $name);
+                $images[] = $name;
+            }
+        }
+        $images_product = new images_product;
+        $images_product->photo = json_encode($images);
+        $images_product->car_id = $car->id;
+        $images_product->save();
+
         return redirect()->route('admin.index');
     }
 
@@ -101,6 +120,7 @@ class adminController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
         $car = car::find($id);
         $car->name = $request->name;
         $car->year = $request->year;

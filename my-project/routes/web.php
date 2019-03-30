@@ -58,3 +58,5 @@ Route::delete('auth/delete/{id}', 'authController@destroy')->name('auth.destroy'
 Route::get('/car/{id}', 'searchController@show');
 Route::get('/search/name', 'searchController@searchByName')->name('name.search');
 
+//images product
+Route::get('/images/product/{id}', 'imagesProductController@create')->name('images.create');

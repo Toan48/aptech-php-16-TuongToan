@@ -57,7 +57,11 @@ class createProductRequest extends FormRequest
             ],
             'description' => [
                 
-            ]
+            ],
+            'images_list[]' =>
+            [
+                'required', 'image'
+            ],
         ];
     }
 }

@@ -503,6 +503,9 @@
                                                         <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
                                                         <button class="btn btn-danger" type="submit">delete</button>
                                                     </form>
+                                                    <form action="{{route('images.create', $car->id)}}" class="ml-2">
+                                                        <button class="btn btn-primary">add images</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             @endforeach

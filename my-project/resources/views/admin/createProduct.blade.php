@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{'admin/assets/images/favicon.png'}}">
     <title>Thêm Sản Phẩm</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('/admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -25,6 +25,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body class="fix-header card-no-border">
@@ -451,7 +453,7 @@
                                 <h4 class="card-title">Thêm sản phẩm</h4>
                                 <h6 class="card-subtitle">Giao diện trang thêm mới sản phẩm</h6>
                                 <form class="form-material m-t-40" action="{{route('admin.store')}}" method="post" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
+                                    <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input type="text" class="form-control form-control-line" name="name">
@@ -505,6 +507,10 @@
                                     <div class="form-group">
                                         <label>hình ảnh</label>         
                                         <input type="file" name="image" class="form-control"> 
+                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>thêm ảnh chi tiết cho sản phẩm</label>                <input id="" class="form-control" type="file" name='images_list[]' multiple="multiple">                  
                                         <p class="help is-danger">{{ $errors->first('image') }}</p>
                                     </div>
                                     <div class="card">
@@ -647,6 +653,26 @@
 
     });
     </script>
+
+
+    {{--upload images list input  --}}
+    {{-- <script type="text/javascript">
+
+        $(document).ready(function() {
+
+        $(".btn-success").click(function(){ 
+          var html = $(".clone").html();
+          $(".increment").after(html);
+        });
+
+        $("body").on("click",".btn-success",function(){ 
+          $(this).parents(".control-group").remove();
+        });
+
+    });
+    </script> --}}
+
+
 </body>
 
 </html>
