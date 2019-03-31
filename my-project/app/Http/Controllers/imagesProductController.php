@@ -14,7 +14,7 @@ class imagesProductController extends Controller
     public function index()
     {
         //
-        return view('images_product.create');
+
     }
 
     /**

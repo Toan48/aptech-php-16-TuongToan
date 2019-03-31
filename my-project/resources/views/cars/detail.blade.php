@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Toyota Camry 2019</title>
+    <title>Toyota  2019</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/header.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/footer.css')}}">
+    {{-- fotorama slide images --}}
+    <!-- 1. Link to jQuery (1.8 or later), -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
+    <!-- 2. Add images to <div class="fotorama"></div>. -->
 </head>
 
 <body>
@@ -69,7 +78,7 @@
         </div>
     <div class="container product">
         <div class="row">
-            <div class="col-12 col-md-5 product-image">
+            {{-- <div class="col-12 col-md-5 product-image">
                 <div class="product-image__full"> <img id="product-zoom"
                         src="http://themesground.com/harrier-demo/V1/products-images/p45.jpg"
                         data-zoom-image="products-images/p35.jpg" alt="product-image"
@@ -98,13 +107,26 @@
                         </div>
                     </div>
                 </div>
+            </div> --}}
+            <div class="col-12 col-md-5 product-image">
+                <div class="fotorama h-100 " data-nav="thumbs">
+                    @foreach($images_product as $image_product)
+                        @php $a = json_decode($image_product->photo,true); @endphp
+                            @if(is_array($a) && !empty($a))
+                                 @foreach ($a as $i)
+                                    <img src="{{asset('img/'.$i)}}">
+                                @endforeach
+                             @endif
+                    @endforeach
+                    {{-- {{dd($image_product->photo)}} --}}
+                </div>
             </div>
             <div class="col-12 col-md-7 product-detail">
                 <div class="brand">
-                    <strong>XPERIA</strong>
+                    <strong>{{$category->name}}</strong>
                 </div>
                 <div class="name">
-                    <h1>Gorgeous Mercedes-Benz E-Class All-Terrain Luxury</h1>
+                    <h1>{{$car->name}}</h1>
                 </div>
                 <div class="ratings">
                     <div class="rating-box">
@@ -121,7 +143,7 @@
                             <span>In Stock</span>
                         </p>
                         <p class="special-price">
-                            <span id="product-price-48" class="price"> $309.99 </span>
+                            <span id="product-price-48" class="price">{{$car->price}}$ </span>
                         </p>
                     </div>
                 </div>
@@ -258,8 +280,57 @@
                             <div class="item-info">
                                 <div class="info-inner">
                                     <div class="item-title"><a href="product-detail.html"
-                                            title="Retis lapen casen">Gorgeous Mercedes-Benz E-Class All-Terrain
-                                            Luxury</a> </div>
+                                            title="Retis lapen casen"> </a> </div>
+                                    <div class="item-content">
+                                        <div class="rating">
+                                            <div class="ratings">
+                                                <div class="rating-box">
+                                                    <div class="rating" style="width:80%"></div>
+                                                </div>
+                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
+                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
+                                            </div>
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="price-box"><span class="regular-price"><span
+                                                        class="price">$3adfsdf00sdfsad</span> </span>
+                                            </div>
+                                        </div>
+                                        <div class="other-info">
+                                            <div class="col-km"><i class="fas fa-certificate"></i> 847km</div>
+                                            <div class="col-engine"><i class="fas fa-chess-board"></i> Manual</div>
+                                            <div class="col-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-inner">
+                            <div class="item-img">
+                                <div class="item-img-info">
+                                    <a href="product-detail.html" title="Retis lapen casen" class="product-image"><img
+                                            src="http://themesground.com/harrier-demo/V1/products-images/p35.jpg"
+                                            alt="Retis lapen casen"></a>
+                                    <!-- <div class="item-box-hover">
+					                        <div class="box-inner">
+					                            <div class="add_cart">
+					                                <button class="button btn-cart" type="button"></button>
+					                            </div>
+					                            <div class="product-detail-bnt"><a class="button detail-bnt"><span>Quick View</span></a></div>
+					                            <div class="actions"><span class="add-to-links"><a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
+					                                </span>
+					                            </div>
+					                        </div>
+					                    </div> -->
+                                </div>
+                            </div>
+                            <div class="item-info">
+                                <div class="info-inner">
+                                    <div class="item-title"><a href="product-detail.html"
+                                            title="Retis lapen casen">dsdfsdf</a> </div>
                                     <div class="item-content">
                                         <div class="rating">
                                             <div class="ratings">
@@ -369,58 +440,7 @@
                                                     <div class="rating" style="width:80%"></div>
                                                 </div>
                                                 <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
-                                            </div>
-                                        </div>
-                                        <div class="item-price">
-                                            <div class="price-box"><span class="regular-price"><span
-                                                        class="price">$39000.00</span> </span>
-                                            </div>
-                                        </div>
-                                        <div class="other-info">
-                                            <div class="col-km"><i class="fas fa-certificate"></i> 847km</div>
-                                            <div class="col-engine"><i class="fas fa-chess-board"></i> Manual</div>
-                                            <div class="col-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-inner">
-                            <div class="item-img">
-                                <div class="item-img-info">
-                                    <a href="product-detail.html" title="Retis lapen casen" class="product-image"><img
-                                            src="http://themesground.com/harrier-demo/V1/products-images/p35.jpg"
-                                            alt="Retis lapen casen"></a>
-                                    <!-- <div class="item-box-hover">
-					                        <div class="box-inner">
-					                            <div class="add_cart">
-					                                <button class="button btn-cart" type="button"></button>
-					                            </div>
-					                            <div class="product-detail-bnt"><a class="button detail-bnt"><span>Quick View</span></a></div>
-					                            <div class="actions"><span class="add-to-links"><a href="#" class="link-wishlist" title="Add to Wishlist"><span>Add to Wishlist</span></a>
-					                                </span>
-					                            </div>
-					                        </div>
-					                    </div> -->
-                                </div>
-                            </div>
-                            <div class="item-info">
-                                <div class="info-inner">
-                                    <div class="item-title"><a href="product-detail.html"
-                                            title="Retis lapen casen">Gorgeous Mercedes-Benz E-Class All-Terrain
-                                            Luxury</a> </div>
-                                    <div class="item-content">
-                                        <div class="rating">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <div class="rating" style="width:80%"></div>
-                                                </div>
-                                                <p class="rating-links"><a href="#">1 Review(s)</a> <span
-                                                        class="separator">|</span> <a href="#">Add Review</a> </p>
+                                                        class="separator">|Gorgeous Mercedes-Benz E-Class All-Terrain Luxury</span> <a href="#">Add Review</a> </p>
                                             </div>
                                         </div>
                                         <div class="item-price">
