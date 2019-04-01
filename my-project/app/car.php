@@ -26,7 +26,7 @@ class car extends Model
 
     public function categories()
     {
-        return $this -> belongsTO('App\category', 'category_id', 'id');
+        return $this -> belongsTo('App\category', 'category_id', 'id');
     }
 
     public function images_product()
@@ -34,4 +34,8 @@ class car extends Model
         return $this -> hasMany('App\images_product', 'car_id', 'id');
     }
 
+    public function orders()
+    {
+        return $this -> hasMany('App\oder', 'car_id', 'id');
+    }
 }

@@ -161,8 +161,10 @@
                                     class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                             </div>
                         </div>
+                        <form action="{{route('order.create', $car->id)}}" action="get">
                         <button onclick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart"
-                            type="button">Add to Cart</button>
+                            type="submit">buy this car</button>
+                        </form>
                     </div>
                 </div>
                 <div class="short-description">

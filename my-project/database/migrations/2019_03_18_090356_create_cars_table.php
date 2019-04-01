@@ -26,7 +26,8 @@ class CreateCarsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->longText('image')->nullable();
             $table->longText('description')->nullable();
-    
+            $table->tinyInteger('deal_of_week')->default('0');
+            $table->tinyInteger('best_sale')->default('0');
             $table->timestamps();
         });
     }

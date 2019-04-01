@@ -60,3 +60,7 @@ Route::get('/search/name', 'searchController@searchByName')->name('name.search')
 
 //images product
 Route::get('/images/product/{id}', 'imagesProductController@create')->name('images.create');
+
+//order
+Route::get('/order/{id}', 'orderController@create')->name('order.create');
+Route::post('/order/store/', 'orderController@store')->name('order.store');

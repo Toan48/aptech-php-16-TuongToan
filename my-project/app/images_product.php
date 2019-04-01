@@ -13,6 +13,6 @@ class images_product extends Model
 
     public function cars()
     {
-        return $this -> belongsTO('App\car', 'car_id', 'id');
+        return $this -> belongsTo('App\car', 'car_id', 'id');
     }
 }
