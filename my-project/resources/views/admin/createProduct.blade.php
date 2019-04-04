@@ -457,12 +457,12 @@
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input type="text" class="form-control form-control-line" name="name">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                                        <p class="text-danger">{{ $errors->first('name') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>năm sản xuất</label>
                                         <input type="text" class="form-control form-control-line" name="year">
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                        <p class="text-danger">{{ $errors->first('year') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">Hãng</label>
@@ -472,46 +472,46 @@
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
-                                        <p class="help is-danger">{{ $errors->first('categories') }}</p>
+                                        <p class="text-danger">{{ $errors->first('categories') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand" >Giá</label>
                                         <input type="text" class="form-control form-control-line" name="price" placeholder="USD$">
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                        <p class="text-danger">{{ $errors->first('price') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">hộp số</label>
                                         <input type="text" class="form-control form-control-line" name="transmission">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                        <p class="text-danger">{{ $errors->first('transmission') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>body style</label>
                                         <input type="text" class="form-control form-control-line" name="body_style">
-                                        <p class="help is-danger">{{ $errors->first('body_style') }}</p>
+                                        <p class="text-danger">{{ $errors->first('body_style') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>động cơ</label>
                                         <input type="text" class="form-control form-control-line" name="engine">
-                                        <p class="help is-danger">{{ $errors->first('engine') }}</p>
+                                        <p class="text-danger">{{ $errors->first('engine') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>màu sắc</label>
                                         <input type="text" class="form-control form-control-line" name="color">
-                                        <p class="help is-danger">{{ $errors->first('color') }}</p>
+                                        <p class="text-danger">{{ $errors->first('color') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>nhiên liệu</label>
                                         <input type="text" class="form-control form-control-line" name="fuel_style">
-                                        <p class="help is-danger">{{ $errors->first('fuel_style') }}</p>
+                                        <p class="text-danger">{{ $errors->first('fuel_style') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>hình ảnh</label>         
                                         <input type="file" name="image" class="form-control"> 
-                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
+                                        <p class="text-danger">{{ $errors->first('image') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>thêm ảnh chi tiết cho sản phẩm</label>                <input id="" class="form-control" type="file" name='images_list[]' multiple="multiple">                  
-                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
+                                        <p class="text-danger">{{ $errors->first('images_list') }}</p>
                                     </div>
                                     <div class="card">
                                             <div class="card-body">
@@ -520,8 +520,8 @@
                                                 <div class="form-group">
                                                 <textarea class="textarea_editor form-control" rows="15" placeholder="Enter text ..." name="description">
                                                 </textarea>
-                                                <p class="help is-danger">{{ $errors->first('description') }}</p>
                                             </div>
+                                            <p class="text-danger">{{ $errors->first('description') }}</p>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Đăng sản phẩm</button>

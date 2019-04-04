@@ -38,16 +38,16 @@ Route::get('categories/create', 'categoriesController@create')->name('category.c
 Route::post('categories/store', 'categoriesController@store')->name('category.store');
 Auth::routes();
 
+//route to home page
 Route::get('/home', 'HomeController@index')->name('home');
 
 //auth
 Route::get('auth/admin', 'authController@login')->name('auth.login');
 Route::post('authentication', 'authController@authLogin')->name('auth');
-Route::get('/auth/register', 'authController@create')->name('auth.create');//->middleware('checkUser');
-Route::post('/auth/store', 'authController@store')->name('auth.store');//->middleware('checkUser');
+Route::get('/auth/register', 'authController@create')->name('auth.create')->middleware('checkUser');
+Route::post('/auth/store', 'authController@store')->name('auth.store');
 Route::get('/auth/logout',  'authController@logout' )->name('auth.logout');
 Route::get('/auth/index', 'authController@index')->name('auth.index');
-
 Route::get('auth/show/{id}', 'authController@show')->name('auth.show');
 Route::get('auth/edit/{id}', 'authController@edit')->name('auth.edit');
 Route::post('auth/update/{id}', 'authController@update')->name('auth.update');
