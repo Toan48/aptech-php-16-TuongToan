@@ -462,7 +462,7 @@
                                         <input type="text" class="form-control form-control-line" name="year" value="{{$car->year}}"/>
                                         <p class="help is-danger">{{ $errors->first('year') }}</p>
                                     </div>
-                                    {{-- <div class="form-group">
+                                    <div class="form-group">
                                         <label for="brand">Hãng</label>
                                         <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
                                             <option selected disabled>Choose...</option>
@@ -470,7 +470,8 @@
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
-                                    </div> --}}
+                                        <p class="text-danger">{{ $errors->first('categories') }}</p>
+                                    </div>
                                     <div class="form-group">
                                         <label for="brand" >Giá</label>
                                         <input type="text" class="form-control form-control-line" name="price" placeholder="USD$" value={{$car->price}}>

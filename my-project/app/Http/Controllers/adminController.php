@@ -107,7 +107,8 @@ class adminController extends Controller
     {
         //
         $car = car::find($id);
-        return view('admin.edit', ['car' => $car]);
+        $categories = category::all();
+        return view('admin.edit', ['car' => $car, 'categories' => $categories]);
     }
 
     /**
@@ -120,7 +121,6 @@ class adminController extends Controller
     public function update(Request $request, $id)
     {
         //
-        
         $car = car::find($id);
         $car->name = $request->name;
         $car->year = $request->year;
@@ -132,10 +132,13 @@ class adminController extends Controller
         $car->fuel_style = $request->fuel_style; 
         $car->category_id = $request->categories;
         //upload image to database
-        $filename = $request->file('image')->getClientOriginalName();
-        $path = public_path('img');
-        $request->file('image')->move($path, $filename);
-        $car->image = $filename;
+        if($request->hasfile('image'))
+        {
+            $filename = $request->file('image')->getClientOriginalName();
+            $path = public_path('img');
+            $request->file('image')->move($path, $filename);
+            $car->image = $filename;
+        }
         $car->description = $request->description;
         $car->best_sale = $request->best_sale;
         $car->deal_of_week = $request->deal_of_week;

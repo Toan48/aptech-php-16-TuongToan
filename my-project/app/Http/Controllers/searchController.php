@@ -17,10 +17,10 @@ class searchController extends Controller
             //$cars = car::paginate(12);
     	}else{
     		$cars = car::get();
-    	}
-
-    	return view('search.index', compact('cars'));
+        }
         
+    	return view('search.index', compact('cars'));
+
     }
 
       
