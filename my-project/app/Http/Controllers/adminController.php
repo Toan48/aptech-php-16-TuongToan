@@ -141,6 +141,7 @@ class adminController extends Controller
             $request->file('image')->move($path, $filename);
             $car->image = $filename;
         }
+        
         $car->description = $request->description;
         $car->best_sale = $request->best_sale;
         $car->deal_of_week = $request->deal_of_week;
