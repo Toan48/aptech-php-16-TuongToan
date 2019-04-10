@@ -466,7 +466,7 @@
                                         <label for="brand">Hãng</label>
                                         <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
                                             @foreach($category_id as $item)
-                                                <option selected disabled>{{$item->name}}</option>
+                                                <option selected value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                             @foreach($categories as $category)      
                                                 <option value="{{$category->id}}">{{$category->name}}</option>

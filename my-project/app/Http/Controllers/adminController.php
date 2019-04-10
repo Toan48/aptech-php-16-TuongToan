@@ -8,6 +8,7 @@ use App\Http\Requests\createProductRequest;
 use Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use App\images_product;
+use App\Http\Requests\updateProductRequest;
 
 
 
@@ -119,7 +120,7 @@ class adminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(updateProductRequest $request, $id)
     {
         //
         $car = car::find($id);

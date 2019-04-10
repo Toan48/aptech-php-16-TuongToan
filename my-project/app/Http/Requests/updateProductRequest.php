@@ -25,7 +25,51 @@ class updateProductRequest extends FormRequest
     {
         return [
             //
-            
+            'name' => [
+                'required', 
+            ],
+            'year' => [
+                'required', 'numeric',
+            ],
+            'body_style' => [
+                'required', 
+            ],
+            'engine' => [
+                'required',
+            ],
+            'price' => [
+                'required', 'numeric',
+            ],
+            'transmission' => [
+                'required', 
+            ],
+            'color' => [
+                'required', 'string',
+            ],
+            'categories' => [
+                'required',
+            ],
+            'fuel_style' => [
+                'required', 'string',
+            ],
+            'image' => [
+                 'image',
+            ],
+            'description' => [
+                'required',
+            ],
+            'images_list' =>
+            [
+                'required',
+            ],
+            'best_sale' => [
+                'numeric', 'required'
+            ],
+            'deal_of_week' => [
+                'numeric', 'required'
+            ],
+
         ];
+            
     }
 }
