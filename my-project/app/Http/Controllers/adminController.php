@@ -108,7 +108,8 @@ class adminController extends Controller
         //
         $car = car::find($id);
         $categories = category::all();
-        return view('admin.edit', ['car' => $car, 'categories' => $categories]);
+        $category_id = category::where('id', $car->category_id)->get();
+        return view('admin.edit', ['car' => $car, 'categories' => $categories, 'category_id' => $category_id]);
     }
 
     /**

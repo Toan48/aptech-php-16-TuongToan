@@ -465,9 +465,11 @@
                                     <div class="form-group">
                                         <label for="brand">Hãng</label>
                                         <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
-                                            <option selected disabled>Choose...</option>
+                                            @foreach($category_id as $item)
+                                                <option selected disabled>{{$item->name}}</option>
+                                            @endforeach
                                             @foreach($categories as $category)      
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                         <p class="text-danger">{{ $errors->first('categories') }}</p>
