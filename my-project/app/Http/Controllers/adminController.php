@@ -154,22 +154,26 @@ class adminController extends Controller
         $car->deal_of_week = $request->deal_of_week;
         $car->save();
         //update images list to database
+        $images_product = car::find($id)->images_product;
         if($request->hasfile('images_list'))
         {
+            foreach($images_product as $img)
+            {
+                $img->delete();
+            }
             foreach($request->file('images_list') as $file)
             {
                 $name = $file->getClientOriginalName();
                 $path = public_path('img');
                 $file->move($path, $name);
                 $images[] = $name;
-                dd($images);
             }
             $images_product = new images_product;
-            $images_product->photo = json_encode($images);
+            $images_product->photo = json_encode($images); 
             $images_product->car_id = $car->id;
             $images_product->save();
         }
-        
+
         // $images_product = new images_product;
         // $images_product->photo = json_encode($images);
         // $images_product->car_id = $car->id;
