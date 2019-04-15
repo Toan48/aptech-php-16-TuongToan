@@ -455,12 +455,12 @@
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
                                         <input type="text" class="form-control form-control-line" name="name" value="{{$car->name}}">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                                        <p class="text-danger">{{ $errors->first('name') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>năm sản xuất</label>
                                         <input type="text" class="form-control form-control-line" name="year" value="{{$car->year}}"/>
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                        <p class="text-danger">{{ $errors->first('year') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">Hãng</label>
@@ -477,38 +477,43 @@
                                     <div class="form-group">
                                         <label for="brand" >Giá</label>
                                         <input type="text" class="form-control form-control-line" name="price" placeholder="USD$" value={{$car->price}}>
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                        <p class="text-danger">{{ $errors->first('price') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">hộp số</label>
                                         <input type="text" class="form-control form-control-line" name="transmission" value="{{$car->transmission}}">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                        <p class="text-danger">{{ $errors->first('transmission') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>body style</label>
                                     <input type="text" class="form-control form-control-line"              name="body_style" value="{{$car->body_style}}">
-                                    <p class="help is-danger">{{ $errors->first('body_style') }}</p>
+                                    <p class="text-danger">{{ $errors->first('body_style') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>động cơ</label>
                                         <input type="text" class="form-control form-control-line" name="engine" value="{{$car->engine}}">
-                                        <p class="help is-danger">{{ $errors->first('engine') }}</p>
+                                        <p class="text-danger">{{ $errors->first('engine') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>màu sắc</label>
                                         <input type="text" class="form-control form-control-line" name="color" value="{{$car->color}}">
-                                        <p class="help is-danger">{{ $errors->first('color') }}</p>
+                                        <p class="text-danger">{{ $errors->first('color') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>nhiên liệu</label>
                                         <input type="text" class="form-control form-control-line" name="fuel_style" value="{{$car->fuel_style}}">
-                                        <p class="help is-danger">{{ $errors->first('fuel_style') }}</p>
+                                        <p class="text-danger">{{ $errors->first('fuel_style') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>hình ảnh</label>         
                                         <input type="file" name="image" class="form-control"> 
-                                        <p class="help is-danger">{{ $errors->first('image') }}</p>
+                                        <p class="text-danger">{{ $errors->first('image') }}</p>
                                     </div>
+                                    <div class="form-group">
+                                        <label>thêm ảnh chi tiết cho sản phẩm</label>                <input id="" class="form-control" type="file" name='images_list[]' multiple="multiple">                  
+                                        <p class="text-danger">{{ $errors->first('images_list') }}</p>
+                                    </div>
+                                
                                     <div class="card">
                                             <div class="card-body">
                                                 <h4 class="card-title">Chi tiết sản phẩm</h4>
@@ -517,15 +522,18 @@
                                                 <textarea class="textarea_editor form-control" rows="15" placeholder="" name="description" value="">
                                                 </textarea>
                                             </div>
+                                            <p class="text-danger">{{ $errors->first('description') }}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>best sale</label>         
                                         <input type="text" name="best_sale" class="form-control" value="{{$car->best_sale}}"> 
+                                        <p class="text-danger">{{ $errors->first('best_sale') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Deal of Week</label>         
-                                        <input type="text" name="deal_of_week" class="form-control" value="{{$car->deal_of_week}}"> 
+                                        <input type="text" name="deal_of_week" class="form-control" value="{{$car->deal_of_week}}">
+                                        <p class="text-danger">{{ $errors->first('deal_of_week') }}</p>
                                     </div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">update</button>
                                 </form>

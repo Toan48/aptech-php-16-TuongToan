@@ -53,14 +53,14 @@ class updateProductRequest extends FormRequest
                 'required', 'string',
             ],
             'image' => [
-                 'image',
+                 'image', 
             ],
             'description' => [
-                'required',
+                // 'required'
             ],
-            'images_list' =>
+            'images_list.*' =>
             [
-                'required',
+                'image',
             ],
             'best_sale' => [
                 'numeric', 'required'

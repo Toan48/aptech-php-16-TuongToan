@@ -9,7 +9,7 @@ use Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use App\images_product;
 use App\Http\Requests\updateProductRequest;
-
+use File;
 
 
 class adminController extends Controller
@@ -59,12 +59,16 @@ class adminController extends Controller
         $car->fuel_style = $request->fuel_style; 
         $car->category_id = $request->categories;
         //upload image to database
+        if($request->hasfile('image'))
+        {
         $filename = $request->file('image')->getClientOriginalName();
         $path = public_path('img');
         $request->file('image')->move($path, $filename);
         $car->image = $filename;
+        }
         $car->description = $request->description;
         $car->save();
+      
         //upload images to images_product table
         
         if($request->hasfile('images_list'))
@@ -77,6 +81,7 @@ class adminController extends Controller
                 $images[] = $name;
             }
         }
+
         $images_product = new images_product;
         $images_product->photo = json_encode($images);
         $images_product->car_id = $car->id;
@@ -133,19 +138,42 @@ class adminController extends Controller
         $car->color = $request->color;
         $car->fuel_style = $request->fuel_style; 
         $car->category_id = $request->categories;
-        //upload image to database
+        //update image to database
         if($request->hasfile('image'))
         {
             $filename = $request->file('image')->getClientOriginalName();
             $path = public_path('img');
             $request->file('image')->move($path, $filename);
             $car->image = $filename;
+            $oldFilename = $car->image;
+            File::delete(asset('img/'.$oldFilename));
         }
-        
+
         $car->description = $request->description;
         $car->best_sale = $request->best_sale;
         $car->deal_of_week = $request->deal_of_week;
         $car->save();
+        //update images list to database
+        if($request->hasfile('images_list'))
+        {
+            foreach($request->file('images_list') as $file)
+            {
+                $name = $file->getClientOriginalName();
+                $path = public_path('img');
+                $file->move($path, $name);
+                $images[] = $name;
+                dd($images);
+            }
+            $images_product = new images_product;
+            $images_product->photo = json_encode($images);
+            $images_product->car_id = $car->id;
+            $images_product->save();
+        }
+        
+        // $images_product = new images_product;
+        // $images_product->photo = json_encode($images);
+        // $images_product->car_id = $car->id;
+        // $images_product->save();
         return redirect()->route('admin.index');
     }
 
