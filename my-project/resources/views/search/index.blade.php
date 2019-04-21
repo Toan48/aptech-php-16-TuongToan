@@ -162,7 +162,7 @@
                           @endforeach
                           @else
                           <div>
-                            <h1>no cars be found</h1>
+                            <h1>no cars be founded</h1>
                           </div>
                           @endif                                          
                         </div>         

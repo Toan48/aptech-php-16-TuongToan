@@ -455,22 +455,22 @@
                                     <div class="form-group">
                                         <label>user name</label>
                                         <input type="text" class="form-control form-control-line" name="username">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                                        <p class="help is-danger">{{ $errors->first('username') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>name</label>
                                         <input type="text" class="form-control form-control-line" name="name">
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand" >email</label>
                                         <input type="email" class="form-control form-control-line" name="email" placeholder="">
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                        <p class="help is-danger">{{ $errors->first('email') }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand">password</label>
                                         <input type="password" class="form-control form-control-line" name="password">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                        <p class="help is-danger">{{ $errors->first('password') }}</p>
                                     </div>
                                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">tạo user</button>
                                 </form>

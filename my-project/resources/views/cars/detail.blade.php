@@ -128,14 +128,14 @@
                 <div class="name">
                     <h1>{{$car->name}}</h1>
                 </div>
-                <div class="ratings">
+                {{-- <div class="ratings">
                     <div class="rating-box">
                         <div style="width:60%" class="rating"></div>
                     </div>
                     <p class="rating-links">
                         <a href="#">1 Review</a> <span class="separator">|</span>
                         <a href="#">Add Your Review</a> </p>
-                </div>
+                </div> --}}
                 <hr>
                 <div class="price-block">
                     <div class="price-box">
@@ -149,7 +149,7 @@
                 </div>
                 <div class="add-to-box mb-3">
                     <div class="add-to-cart">
-                        <div class="float-left">
+                        {{-- <div class="float-left">
                             <div class="custom float-left">
                                 <button
                                     onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 0 ) result.value--;return false;"
@@ -160,7 +160,7 @@
                                     onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;"
                                     class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                             </div>
-                        </div>
+                        </div> --}}
                         <form action="{{route('order.create', $car->id)}}" action="get">
                         <button onclick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart"
                             type="submit">buy this car</button>
@@ -181,29 +181,7 @@
                     <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>
                 </div>
                 <div class="social ">
-                    <ul class="link">
-                        <li class="fb">
-                            <a href="#"></a>
-                        </li>
-                        <li class="tw">
-                            <a href="#"></a>
-                        </li>
-                        <li class="googleplus">
-                            <a href="#"></a>
-                        </li>
-                        <li class="rss">
-                            <a href="#"></a>
-                        </li>
-                        <li class="pintrest">
-                            <a href="#"></a>
-                        </li>
-                        <li class="linkedin">
-                            <a href="#"></a>
-                        </li>
-                        <li class="youtube">
-                            <a href="#"></a>
-                        </li>
-                    </ul>
+                    
                 </div>
                 <ul class="shipping-pro">
                     <li>Free Wordwide Shipping</li>
@@ -284,7 +262,7 @@
                                     <div class="item-title"><a href="product-detail.html"
                                             title="Retis lapen casen"> </a> </div>
                                     <div class="item-content">
-                                        <div class="rating">
+                                        {{-- <div class="rating">
                                             <div class="ratings">
                                                 <div class="rating-box">
                                                     <div class="rating" style="width:80%"></div>
@@ -292,7 +270,7 @@
                                                 <p class="rating-links"><a href="#">1 Review(s)</a> <span
                                                         class="separator">|</span> <a href="#">Add Review</a> </p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="item-price">
                                             <div class="price-box"><span class="regular-price"><span
                                                         class="price">$3adfsdf00sdfsad</span> </span>

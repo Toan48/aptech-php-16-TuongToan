@@ -76,9 +76,10 @@ class carsController extends Controller
     {
         //
         $images_product = car::find($id)->images_product;
-        $category = category::find($id);
         //dd($images_product);
         $car = car::find($id);
+        $category = $car->categories;
+
         return view('cars.detail', ['car' => $car, 'images_product' => $images_product, 'category' => $category]);
     }
 

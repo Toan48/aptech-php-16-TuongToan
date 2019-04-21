@@ -191,6 +191,7 @@ class adminController extends Controller
     {
         //
         $car = car::find($id);
+        $car->images_product()->delete();
         $car->delete();
         return redirect()->route('admin.index');
     }

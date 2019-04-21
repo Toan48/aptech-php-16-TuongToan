@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\createUserRequest;
 
 
 class authController extends Controller
@@ -31,7 +32,7 @@ class authController extends Controller
         // dd($auth);
         if(Auth::attempt(['username' => $username, 'password' => $password]))
         {
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.home');
         }
         else
         {
@@ -44,7 +45,7 @@ class authController extends Controller
         return view('auth.register');
     }
 
-    public function store(Request $request)
+    public function store(createUserRequest $request)
     {
         $user = new User;
         $user->username = $request->username;
@@ -79,7 +80,10 @@ class authController extends Controller
         $user->username = $request->username;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        if($request->has('password'))
+        {
+            $user->password = Hash::make($request->password);
+        }
         $user->save();
         return redirect()->route('auth.index');
     }

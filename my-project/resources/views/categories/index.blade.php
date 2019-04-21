@@ -9,12 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Thêm Sản Phẩm</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
+    <title>Admin | Car Project</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('/admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/admin/assets/plugins/icheck/skins/all.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.css')}}" />
+    <link href="{{asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    
+    <!-- chartist CSS -->
+    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
+    <!--This page css - Morris CSS -->
+    <link href="{{asset('admin/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('admin/car-admin/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -180,6 +185,8 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
+                        
+                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -283,6 +290,7 @@
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->
+                        
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
@@ -332,9 +340,9 @@
                 <!-- User profile -->
                 <div class="user-profile" style="background: url({{asset('admin/assets/images/background/user-info.jpg')}} no-repeat;">
                     <!-- User profile image -->
-                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}" alt="user" /> </div>
+                    <div class="profile-img"> <img src="{{asset('admin/assets/images/users/profile.png')}}"  alt="user" /> </div>
                     <!-- User profile text-->
-                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Trương Lâm</a>
+                    <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
                         <div class="dropdown-menu animated flipInY">
                             <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
@@ -347,37 +355,37 @@
                 <!-- End User profile text-->
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                        <ul id="sidebarnav">
-                            <li class="nav-small-cap">TRANG QUẢN LÝ</li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">Đơn hàng</a></li>
-                                    <li><a href="#">Tin tức</a></li>
-                                    <li><a href="#">Yêu cầu</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">Thêm mới</a></li>
-                                    <li><a href="#">Quản lý</a></li>
-                                    <li><a href="#">Danh mục tin tức</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
-                                    <li><a href="{{route('admin.index')}}">Quản lý</a></li>
-                                    <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
-                                    <li><a href="{{route('auth.index')}}">Quản lý</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">TRANG QUẢN LÝ</li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Đơn hàng</a></li>
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Yêu cầu</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
+                                <li><a href="#">Danh mục tin tức</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="add-product.html">Thêm mới</a></li>
+                                <li><a href="list-product.html">Quản lý</a></li>
+                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
@@ -408,10 +416,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">Thêm sản phẩm</h3>
+                        <h3 class="text-themecolor m-b-0 m-t-0">Quản lý sản phẩm</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Thêm sản phẩm</li>
+                            <li class="breadcrumb-item active">Quản lý sản phẩm</li>
                         </ol>
                     </div>
                     <div class="col-md-7 col-4 align-self-center">
@@ -448,103 +456,49 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Sửa thông tin sản phẩm</h4>
-                                <h6 class="card-subtitle">Giao diện trang sửa thông tin sản phẩm</h6>
-                                <form class="form-material m-t-40" action="{{route('admin.update', $car->id)}}" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
-                                    <div class="form-group">
-                                        <label>Tên sản phẩm</label>
-                                        <input type="text" class="form-control form-control-line" name="name" value="{{$car->name}}">
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Năm sản xuất</label>
-                                        <input type="text" class="form-control form-control-line" name="year" value="{{$car->year}}"/>
-                                        <p class="text-danger">{{ $errors->first('year') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand">Hãng</label>
-                                        <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
-                                            @foreach($category_id as $item)
-                                                <option selected value="{{$item->id}}">{{$item->name}}</option>
+                                <h4 class="card-title">Quản lý sản phẩm</h4>
+                                <h6 class="card-subtitle">Menu quản lý sản phẩm</h6>
+                                <div class="table-responsive m-t-40">
+                                    <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">id</th>
+                                                <th>id</th>
+                                                <th>name</th>
+                                                <th>created_at</th>
+                                                <th>update_at</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($categories as $category)            
+                                            <tr>
+                                                <td>{{$category->id}}</td>
+                                                <td>{{$category->name}}</td>
+                                                <td>{{$category->created_at}}</td>
+                                                <td>{{$category->updated_at}}</td>
+                                                <td class="d-flex">
+                                                    <form action="{{route('category.edit', $category->id)}}" class="mr-2" method="GET">
+                                                        <button class="btn btn-warning" type="submit">edit</button>
+                                                    </form>
+                                                    <form action="{{route('category.destroy', $category->id)}}" method="post">
+                                                        <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
+                                                        <button class="btn btn-danger" type="submit">delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
                                             @endforeach
-                                            @foreach($categories as $category)      
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <p class="text-danger">{{ $errors->first('categories') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand" >Giá</label>
-                                        <input type="text" class="form-control form-control-line" name="price" placeholder="USD$" value={{$car->price}}>
-                                        <p class="text-danger">{{ $errors->first('price') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="brand">Hộp số</label>
-                                        <input type="text" class="form-control form-control-line" name="transmission" value="{{$car->transmission}}">
-                                        <p class="text-danger">{{ $errors->first('transmission') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Body style</label>
-                                    <input type="text" class="form-control form-control-line"              name="body_style" value="{{$car->body_style}}">
-                                    <p class="text-danger">{{ $errors->first('body_style') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Động cơ</label>
-                                        <input type="text" class="form-control form-control-line" name="engine" value="{{$car->engine}}">
-                                        <p class="text-danger">{{ $errors->first('engine') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Màu sắc</label>
-                                        <input type="text" class="form-control form-control-line" name="color" value="{{$car->color}}">
-                                        <p class="text-danger">{{ $errors->first('color') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nhiên liệu</label>
-                                        <input type="text" class="form-control form-control-line" name="fuel_style" value="{{$car->fuel_style}}">
-                                        <p class="text-danger">{{ $errors->first('fuel_style') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hình ảnh</label>         
-                                        <input type="file" name="image" class="form-control"> 
-                                        <p class="text-danger">{{ $errors->first('image') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Thêm ảnh chi tiết cho sản phẩm</label>                <input id="" class="form-control" type="file" name='images_list[]' multiple="multiple">                  
-                                        <p class="text-danger">{{ $errors->first('images_list') }}</p>
-                                    </div>
-                                
-                                    <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Chi tiết sản phẩm</h4>
-                                                <h6 class="card-subtitle">Mô tả chi tiết cho sản phẩm...</h6>
-                                                <div class="form-group">
-                                                <textarea class="textarea_editor form-control" rows="15" placeholder="" name="description" value="">
-                                                </textarea>
-                                            </div>
-                                            <p class="text-danger">{{ $errors->first('description') }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Best sale</label>         
-                                        <input type="text" name="best_sale" class="form-control" value="{{$car->best_sale}}"> 
-                                        <p class="text-danger">{{ $errors->first('best_sale') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Deal of Week</label>         
-                                        <input type="text" name="deal_of_week" class="form-control" value="{{$car->deal_of_week}}">
-                                        <p class="text-danger">{{ $errors->first('deal_of_week') }}</p>
-                                    </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
-                                </form>
+                                        </tbody>
+                                    </table>
+                                    <form action="{{route('category.create')}}" method="get">
+                                        <button class="btn btn-primary">create</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-
-                
-                <!-- End Page Content -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
@@ -610,9 +564,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer">
-                © 2019 by Lâm đẹp trai
-            </footer>
+            <footer class="footer"> © 2019 by Lâm đẹp trai</footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -642,28 +594,68 @@
     <script src="{{asset('admin/assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('admin/car-admin/js/custom.min.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <script src="{{asset('admin/car-admin/js/jasny-bootstrap.js')}}"></script>
+    <!-- This is data table -->
+    <script src="{{asset('admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+    </script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{asset('admin/assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
-    <!-- icheck -->
-    <script src="{{asset('admin/assets/plugins/icheck/icheck.min.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/icheck/icheck.init.js')}}"></script>
-    <!-- wysuhtml5 Plugin JavaScript -->
-    <script src="{{asset('admin/assets/plugins/html5-editor/wysihtml5-0.3.0.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/html5-editor/bootstrap-wysihtml5.js')}}"></script>
-    <script>
-    $(document).ready(function() {
-
-        $('.textarea_editor').wysihtml5();
-
-
-    });
-    </script>
 </body>
 
 </html>

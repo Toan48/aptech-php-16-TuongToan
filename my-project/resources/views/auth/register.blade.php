@@ -89,10 +89,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="col-12 d-flex justify-content-center align-items-center form__size">
-            <div class="col-6 d-flex flex-column justify-content-center align-items-center  form__border form__border-shadow h-50 ">
-                <h1>login</h1>
-                <form action="{{route('auth.store')}}" method="POST">
+        <div class="col-12 d-flex justify-content-center align-items-center form__size mt-5">
+            <div class="col-6 d-flex flex-column justify-content-center align-items-center  form__border form__border-shadow h-100 ">
+                <h1 class="mb-5">đăng ký</h1>
+                <form action="{{route('auth.store')}}" method="POST" class="pb-4">
                     {{ csrf_field() }}
                     <div class="form-group w-100">
                         <input type="text" name="username" class="form-control" placeholder="user name" required autofocus>
@@ -107,10 +107,7 @@
                         <input type="email" name="email" id="" placeholder="email" class="form-control" required autofocus>
                     </div>
                     <div class="form-group  d-flex justify-content-center">
-                        <button class="btn btn-primary" type="submit">login</button>
-                    </div>
-                    <div class="form-group d-flex justify-content-center">
-                        <a href="#" class="text-primary">forget password</a>
+                        <button class="btn btn-primary" type="submit">đăng ký</button>
                     </div>
                 </form>
             </div>

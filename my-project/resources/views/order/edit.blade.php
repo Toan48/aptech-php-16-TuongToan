@@ -347,37 +347,37 @@
                 <!-- End User profile text-->
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                        <ul id="sidebarnav">
-                            <li class="nav-small-cap">TRANG QUẢN LÝ</li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">Đơn hàng</a></li>
-                                    <li><a href="#">Tin tức</a></li>
-                                    <li><a href="#">Yêu cầu</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">Thêm mới</a></li>
-                                    <li><a href="#">Quản lý</a></li>
-                                    <li><a href="#">Danh mục tin tức</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="{{route('admin.create')}}">Thêm mới</a></li>
-                                    <li><a href="{{route('admin.index')}}">Quản lý</a></li>
-                                    <li><a href="{{route('cars.index')}}">Danh mục sản phẩm</a></li>
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="{{route('auth.create')}}">Thêm mới</a></li>
-                                    <li><a href="{{route('auth.index')}}">Quản lý</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">TRANG QUẢN LÝ</li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Trạng thái</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Đơn hàng</a></li>
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Yêu cầu</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Tin tức</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
+                                <li><a href="#">Danh mục tin tức</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sản phẩm</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="add-product.html">Thêm mới</a></li>
+                                <li><a href="list-product.html">Quản lý</a></li>
+                                <li><a href="cat-product.html">Danh mục sản phẩm</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">User</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="#">Thêm mới</a></li>
+                                <li><a href="#">Quản lý</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
@@ -448,94 +448,36 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Sửa thông tin sản phẩm</h4>
-                                <h6 class="card-subtitle">Giao diện trang sửa thông tin sản phẩm</h6>
-                                <form class="form-material m-t-40" action="{{route('admin.update', $car->id)}}" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="post" /> {{csrf_field()}}
+                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <h6 class="card-subtitle">Giao diện trang thêm mới sản phẩm</h6>
+                                <form class="form-material m-t-40" action="" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
                                     <div class="form-group">
-                                        <label>Tên sản phẩm</label>
-                                        <input type="text" class="form-control form-control-line" name="name" value="{{$car->name}}">
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Năm sản xuất</label>
-                                        <input type="text" class="form-control form-control-line" name="year" value="{{$car->year}}"/>
-                                        <p class="text-danger">{{ $errors->first('year') }}</p>
+                                        <label>customer name</label>
+                                        <input type="text" class="form-control form-control-line" name="username" value="{{$order->customer_name}}">
+                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
                                     </div>
                                     <div class="form-group">
-                                        <label for="brand">Hãng</label>
-                                        <select class="custom-select form-control-line" id="inputGroupSelect01" name="categories">
-                                            @foreach($category_id as $item)
-                                                <option selected value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
-                                            @foreach($categories as $category)      
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <p class="text-danger">{{ $errors->first('categories') }}</p>
+                                        <label>email</label>
+                                        <input type="text" class="form-control form-control-line" name="name" value="{{$order->email}}">
+                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
                                     </div>
                                     <div class="form-group">
-                                        <label for="brand" >Giá</label>
-                                        <input type="text" class="form-control form-control-line" name="price" placeholder="USD$" value={{$car->price}}>
-                                        <p class="text-danger">{{ $errors->first('price') }}</p>
+                                        <label for="brand" >address</label>
+                                        <input type="text" class="form-control form-control-line" name="email" placeholder="" value="{{$order->address}}">
+                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
                                     </div>
                                     <div class="form-group">
-                                        <label for="brand">Hộp số</label>
-                                        <input type="text" class="form-control form-control-line" name="transmission" value="{{$car->transmission}}">
-                                        <p class="text-danger">{{ $errors->first('transmission') }}</p>
+                                        <label for="brand">phone</label>
+                                        <input type="text" class="form-control form-control-line"  value="{{$order->phone}}">
+                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
                                     </div>
                                     <div class="form-group">
-                                        <label>Body style</label>
-                                    <input type="text" class="form-control form-control-line"              name="body_style" value="{{$car->body_style}}">
-                                    <p class="text-danger">{{ $errors->first('body_style') }}</p>
+                                        <label for="brand" >car_id</label>
+                                        <input type="text" class="form-control form-control-line" name="email" placeholder="" value="{{$order->car_id}}">
+                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Động cơ</label>
-                                        <input type="text" class="form-control form-control-line" name="engine" value="{{$car->engine}}">
-                                        <p class="text-danger">{{ $errors->first('engine') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Màu sắc</label>
-                                        <input type="text" class="form-control form-control-line" name="color" value="{{$car->color}}">
-                                        <p class="text-danger">{{ $errors->first('color') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nhiên liệu</label>
-                                        <input type="text" class="form-control form-control-line" name="fuel_style" value="{{$car->fuel_style}}">
-                                        <p class="text-danger">{{ $errors->first('fuel_style') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Hình ảnh</label>         
-                                        <input type="file" name="image" class="form-control"> 
-                                        <p class="text-danger">{{ $errors->first('image') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Thêm ảnh chi tiết cho sản phẩm</label>                <input id="" class="form-control" type="file" name='images_list[]' multiple="multiple">                  
-                                        <p class="text-danger">{{ $errors->first('images_list') }}</p>
-                                    </div>
-                                
-                                    <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Chi tiết sản phẩm</h4>
-                                                <h6 class="card-subtitle">Mô tả chi tiết cho sản phẩm...</h6>
-                                                <div class="form-group">
-                                                <textarea class="textarea_editor form-control" rows="15" placeholder="" name="description" value="">
-                                                </textarea>
-                                            </div>
-                                            <p class="text-danger">{{ $errors->first('description') }}</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Best sale</label>         
-                                        <input type="text" name="best_sale" class="form-control" value="{{$car->best_sale}}"> 
-                                        <p class="text-danger">{{ $errors->first('best_sale') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Deal of Week</label>         
-                                        <input type="text" name="deal_of_week" class="form-control" value="{{$car->deal_of_week}}">
-                                        <p class="text-danger">{{ $errors->first('deal_of_week') }}</p>
-                                    </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">update</button>
                                 </form>
                             </div>
                         </div>

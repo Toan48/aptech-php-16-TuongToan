@@ -230,7 +230,7 @@
         </div>
     </div>
     <!-- hot_deals-->
-    <div class="hot_deals">
+    {{-- <div class="hot_deals">
         <div class="title">
             <h2>Best Seller Cars</h2>
         </div>
@@ -288,7 +288,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--  blog -->
   <div class="blog-home-inner">
         <div class="blog-title">

@@ -16,6 +16,8 @@ class orderController extends Controller
     public function index()
     {
         //
+        $orders = oder::all();
+        return view('order.index', ['orders' => $orders]);
     }
 
     /**
@@ -59,6 +61,8 @@ class orderController extends Controller
     public function show($id)
     {
         //
+        $order = oder::find($id);
+        return view('order.edit', ['order' => $order]);
     }
 
     /**
@@ -82,6 +86,16 @@ class orderController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $orders = oder::find($id);
+        $orders->customer_name = $request->customer_name;
+        $orders->email = $request->email;
+        $orders->address = $request->address;
+        $orders->phone = $request->phone;
+        // $request->car_id->implode('-');
+        // dd($request->car_id);
+        $orders->car_id = $request->car_id;
+        $orders->save();
+        return redirect()->route('order.index')  ;   
     }
 
     /**
@@ -93,5 +107,8 @@ class orderController extends Controller
     public function destroy($id)
     {
         //
+        $order = oder::find($id);
+        $order->delete();
+        return redirect()->route('order.index');
     }
 }

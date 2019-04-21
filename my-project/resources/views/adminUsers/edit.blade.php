@@ -453,26 +453,26 @@
                                 <form class="form-material m-t-40" action="{{route('auth.update', $user->id)}}" method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="_method" value="post" />> {{csrf_field()}}
                                     <div class="form-group">
-                                        <label>user name</label>
+                                        <label>User name</label>
                                         <input type="text" class="form-control form-control-line" name="username" value="{{$user->username}}">
-                                        <p class="help is-danger">{{ $errors->first('name') }}</p>
+                    
                                     </div>
                                     <div class="form-group">
-                                        <label>name</label>
+                                        <label>Name</label>
                                         <input type="text" class="form-control form-control-line" name="name" value="{{$user->name}}">
-                                        <p class="help is-danger">{{ $errors->first('year') }}</p>
+                                        {{-- <p class="help is-danger">{{ $errors->first('year') }}</p> --}}
                                     </div>
                                     <div class="form-group">
-                                        <label for="brand" >email</label>
+                                        <label for="brand" >Email</label>
                                         <input type="email" class="form-control form-control-line" name="email" placeholder="" value="{{$user->email}}">
-                                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                                        {{-- <p class="help is-danger">{{ $errors->first('price') }}</p> --}}
                                     </div>
                                     <div class="form-group">
-                                        <label for="brand">password</label>
+                                        <label for="brand">Password</label>
                                         <input type="password" class="form-control form-control-line" name="password">
-                                        <p class="help is-danger">{{ $errors->first('transmission') }}</p>
+                                        {{-- <p class="help is-danger">{{ $errors->first('transmission') }}</p> --}}
                                     </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">update</button>
+                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
                                 </form>
                             </div>
                         </div>

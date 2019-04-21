@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//car
-Route::get('cars/create', 'carsController@create')->name('cars.create');
-Route::post('cars/store', 'carsController@store')->name('cars.store');
+//home pages
 Route::get('cars/show/{id}', 'carsController@show')->name('cars.show');
 Route::get('cars/index', 'carsController@index')->name('cars.index');
 Route::get('cars/home', 'carsController@home')->name('cars.home');
@@ -34,8 +32,12 @@ Route::delete('admin/delete/{id}', 'adminController@destroy')->name('admin.destr
 
 
 //categories
-Route::get('categories/create', 'categoriesController@create')->name('category.create');
+Route::get('categories/index', 'categoriesController@index')->name('category.index')->middleware('checkUser'); 
+Route::get('categories/create', 'categoriesController@create')->name('category.create')->middleware('checkUser');
 Route::post('categories/store', 'categoriesController@store')->name('category.store');
+Route::delete('categories/delete/{id}', 'categoriesController@destroy')->name('category.destroy');
+Route::get('categories/edit/{id}', 'categoriesController@edit')->name('category.edit')->middleware('checkUser');
+Route::post('categories/update/{id}', 'categoriesController@update')->name('category.update');
 Auth::routes();
 
 //route to home page
@@ -44,7 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //auth
 Route::get('auth/admin', 'authController@login')->name('auth.login');
 Route::post('authentication', 'authController@authLogin')->name('auth');
-Route::get('/auth/register', 'authController@create')->name('auth.create')->middleware('checkUser');
+Route::get('/auth/register', 'authController@create')->name('auth.create');
 Route::post('/auth/store', 'authController@store')->name('auth.store');
 Route::get('/auth/logout',  'authController@logout' )->name('auth.logout');
 Route::get('/auth/index', 'authController@index')->name('auth.index');
@@ -61,6 +63,11 @@ Route::get('/search/name', 'searchController@searchByName')->name('name.search')
 //images product
 Route::get('/images/product/{id}', 'imagesProductController@create')->name('images.create');
 
-//order
+//orders
 Route::get('/order/{id}', 'orderController@create')->name('order.create');
 Route::post('/order/store/', 'orderController@store')->name('order.store');
+Route::get('/orders/list/', 'orderController@index')->name('order.index');
+Route::get('/order/show/{id}', 'orderController@show')->name('order.show');
+Route::post('/order/update/{id}', 'orderController@update')->name('order.update');
+Route::delete('/order/delete/{id}', 'orderController@destroy')->name('order.delete');
+Route::get('/order/edit/{id}', 'orderController@destroy')->name('order.edit');
